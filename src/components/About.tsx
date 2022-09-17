@@ -5,7 +5,7 @@ function About() {
     <section id="about">
       <div className="container mx-auto flex flex-col items-center px-10 py-20">
         <div className="flex flex-col items-center flex-grow ">
-          <img className="object-center xl:w-1/5 lg:w-1/4 md:w-1/3 w-1/2 mb-6 border-4 border-yellow-600 rounded-full opacity-70" src={profile} alt="profile" />
+          <img className="object-center xl:w-1/5 lg:w-1/4 md:w-1/3 w-2/3 mb-6 border-4 border-yellow-600 rounded-full opacity-70" src={profile} alt="profile" />
           <h1 className="title-font sm:text-4xl text-3xl font-medium mb-8 text-center text-white">
             Hi, I'm Sultani
             <br />
