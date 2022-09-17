@@ -43,7 +43,7 @@ export const projects = [
   {
     title: "Currency Converter",
     description:
-      "Currency Converter App that built with React Hook, Typescript, and Chakra UI. Tribute to API Layer who provides the Exchange Rate Data API ",
+      "Currency Converter App that built with React Hook, Typescript, Chakra UI, and also Exchange Rate Data API from API Layer",
     image: project5,
     link: "https://github.com/ahmadsultani/currency-converter"
   },
