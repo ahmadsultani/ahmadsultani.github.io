@@ -5,7 +5,7 @@ function Connect() {
     <section id="connect" className="mt-20">
       <div className="container mx-auto px-4 pb-6 text-center">
         <div className="flex flex-col justify-center w-full ">
-          <MdOutlineConnectWithoutContact 
+          <MdOutlineConnectWithoutContact
             size={60}
             className="mx-auto mb-6"
           />
@@ -36,13 +36,13 @@ function Connect() {
             </a>
           </div>
           <a
-              href="https://wa.me/6282193179080"
-              target="_blank"
-              rel="noreferrer"
-              className="text-base mx-auto mt-6 w-30 text-white bg-yellow-500 border-0 py-2 px-3 focus:outline-none hover:bg-yellow-600 rounded text-md"
-            >
-              Send Message!
-            </a>
+            href="https://wa.me/6282193179080"
+            target="_blank"
+            rel="noreferrer"
+            className="text-base mx-auto mt-6 w-30 text-white bg-yellow-500 border-0 py-2 px-3 focus:outline-none hover:bg-yellow-600 rounded text-md"
+          >
+            Send Message!
+          </a>
         </div>
       </div>
     </section>

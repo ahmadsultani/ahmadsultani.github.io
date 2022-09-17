@@ -13,9 +13,9 @@ function About() {
           </h1>
           <p className="mb-8 leading-relaxed md:text-lg text-md text-center lg:w-2/3 w-auto">
             Sometimes an educator, sometimes a student, but alltimes a learner.
-            <br/>
+            <br />
             A second year student of Informatics Engineering, Hasanuddin University.
-            <br/>
+            <br />
             I am really passionate about coding, especially in website and mobile development.
           </p>
           <div className="flex justify-center">
@@ -40,4 +40,4 @@ function About() {
   )
 }
 
-export default About
+export default About;

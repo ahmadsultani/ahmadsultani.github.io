@@ -8,7 +8,7 @@ function Navbar() {
   function toggleNav() {
     setIsNavOpen((prev: boolean) => !prev);
   }
-  
+
   return (
     <nav id="navbar" className="absolute md:fixed top-0 z-10 w-full flex items-center justify-between px-4 sm:px-8 py-3 bg-gray-800">
       <div className="w-full flex flex-wrap">
@@ -24,7 +24,7 @@ function Navbar() {
             type="button"
             onClick={toggleNav}
           >
-            {isNavOpen ? <AiOutlineClose size={25} color="white"/> : <AiOutlineMenu size={25} color="white"/>}
+            {isNavOpen ? <AiOutlineClose size={25} color="white" /> : <AiOutlineMenu size={25} color="white" />}
           </button>
         </div>
         <div className={isNavOpen ? "flex w-full justify-end " : "hidden"}>
@@ -73,4 +73,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar;
