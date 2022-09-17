@@ -33,7 +33,7 @@ function Navbar() {
               { name: 'About', href: '#about' },
               { name: 'Skills', href: '#skills' },
               { name: 'Projects', href: '#projects' },
-              { name: 'Reach Me', href: '#contacts' },
+              { name: 'Reach Me', href: '#connect' },
             ].map((item) => (
               <li className="nav-item w-full" key={item.name}>
                 <a
@@ -55,7 +55,7 @@ function Navbar() {
               { name: 'About', href: '#about' },
               { name: 'Skills', href: '#skills' },
               { name: 'Projects', href: '#projects' },
-              { name: 'Reach Me', href: '#contacts' },
+              { name: 'Reach Me', href: '#connect' },
             ].map((item) => (
               <li className="nav-item" key={item.name}>
                 <a

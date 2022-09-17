@@ -14,7 +14,7 @@ function Projects() {
           </h1>
           <p className="w-2/3 md:w-3/5 mx-auto leading-relaxed text-base mb-4">
             These are recent projects especially on website development that i made for educational purpose.
-            <br/>Check my <a href="https://github.com/ahmadsultani" target="_blank" className="text-yellow-500 font-semibold" rel="noreferrer">Github Repositories</a> to see my other works.
+            <br />Check my <a href="https://github.com/ahmadsultani" target="_blank" className="text-yellow-500 font-semibold" rel="noreferrer">Github Repositories</a> to see my other works.
           </p>
         </div>
         <div className="flex flex-wrap mx-auto px-8">
