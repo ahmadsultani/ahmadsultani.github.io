@@ -16,16 +16,16 @@ function Connect() {
             If you have any questions or want to collaborate with me, feel free to contact me.
           </p>
           <div className="flex flex-row justify-center mt-4">
-            <a href="https://www.linkedin.com/in/ahmadsultani/" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/ahmadsultanid/" target="_blank" rel="noreferrer">
               <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="linkedin" className="w-12 h-12 mr-6" />
             </a>
-            <a href="https://www.instagram.com/ahmadsultani/" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/ahmadsultanid/" target="_blank" rel="noreferrer">
               <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="instagram" className="w-12 h-12 mr-6" />
             </a>
             <a href="https://www.github.com/ahmadsultani/" target="_blank" rel="noreferrer">
               <img src="https://img.icons8.com/color/48/000000/github--v5.png" alt="github" className="w-12 h-12 mr-6" />
             </a>
-            <a href="https://www.twitter.com/arctanz/" target="_blank" rel="noreferrer">
+            <a href="https://www.twitter.com/arctanxyz/" target="_blank" rel="noreferrer">
               <img src="https://img.icons8.com/color/48/000000/twitter.png" alt="twitter" className="w-12 h-12 mr-6" />
             </a>
             <a href="https://www.facebook.com/ahmadsultanidayanullah/" target="_blank" rel="noreferrer">
