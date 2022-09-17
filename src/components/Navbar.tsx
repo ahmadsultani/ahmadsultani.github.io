@@ -10,7 +10,7 @@ function Navbar() {
   }
 
   return (
-    <nav id="navbar" className="absolute md:fixed top-0 z-10 w-full flex items-center justify-between px-4 sm:px-8 py-3 bg-gray-800">
+    <nav id="navbar" className="fixed top-0 z-10 w-full flex items-center justify-between px-4 sm:px-8 py-3 bg-gray-800">
       <div className="w-full flex flex-wrap">
         <div className="lg:w-1/2 w-full flex justify-between">
           <a
