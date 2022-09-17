@@ -23,13 +23,13 @@ function About() {
               href="https://wa.me/6282193179080"
               target="_blank"
               rel="noreferrer"
-              className="text-base inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded md:text-lg text-md"
+              className="text-base inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded md:text-lg sm:text-md text-sm"
             >
               Contact Me
             </a>
             <a
               href="#projects"
-              className="text-base ml-6 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded md:text-lg text-md"
+              className="text-base ml-6 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded md:text-lg sm:text-md text-sm"
             >
               See My Works
             </a>
