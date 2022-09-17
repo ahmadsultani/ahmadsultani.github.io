@@ -3,7 +3,7 @@ import { MdOutlineConnectWithoutContact } from 'react-icons/md';
 function Connect() {
   return (
     <section id="connect" className="mt-20">
-      <div className="container mx-auto px-4 pb-6 text-center">
+      <div className="container mx-auto px-4 pb-8 text-center">
         <div className="flex flex-col justify-center w-full ">
           <MdOutlineConnectWithoutContact
             size={60}
