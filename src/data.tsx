@@ -2,6 +2,8 @@ import project1 from './assets/images/project1.png';
 import project2 from './assets/images/project2.png';
 import project3 from './assets/images/project3.png';
 import project4 from './assets/images/project4.png';
+import project5 from './assets/images/project5.png';
+import project6 from './assets/images/project6.jpeg';
 import react from './assets/images/react.jpeg';
 import tailwind from './assets/images/tailwind.png';
 import bootstrap from './assets/images/bootstrap.png';
@@ -34,9 +36,23 @@ export const projects = [
   {
     title: "Portfolio Website",
     description:
-      "My old portfolio",
+      "My old portfolio that i made with basic HTML, CSS, Javascript. I also used a bit of Bootstrap 3 and jQuery",
     image: project4,
     link: "https://github.com/ahmadsultani/old-portfolio"
+  },
+  {
+    title: "Currency Converter",
+    description:
+      "Currency Converter App that built with React Hook, Typescript, and Chakra UI. Tribute to API Layer who provides the Exchange Rate Data API ",
+    image: project5,
+    link: "https://github.com/ahmadsultani/currency-converter" 
+  },
+  {
+    title: "Weather App",
+    description:
+      "Weather Forecast Application that I also made as an exercise. Created with React Hook, Chakra UI and OpenWeatherAPI",
+    image: project6,
+    link: "https://github.com/ahmadsultani/weather-app"
   }
 ];
 

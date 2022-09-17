@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-import Contact from "./components/Contact";
+import Connect from "./components/Connect";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <About />
       <Projects />
       <Skills />
-      <Contact />
+      <Connect />
     </main>
   );
 }

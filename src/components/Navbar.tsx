@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
@@ -9,13 +9,6 @@ function Navbar() {
     setIsNavOpen((prev: boolean) => !prev);
   }
   
-  // useEffect(() => {
-  //   const handleWindowClick =  () => setIsNavOpen((prev: boolean) => !prev);
-  //   if (isNavOpen) window.addEventListener('click', handleWindowClick);
-  //   else window.removeEventListener('click', handleWindowClick);
-  //   return () => window.removeEventListener('click', handleWindowClick);
-  // }, [isNavOpen, setIsNavOpen])
-
   return (
     <nav id="navbar" className="absolute md:fixed top-0 z-10 w-full flex items-center justify-between px-4 sm:px-8 py-3 bg-gray-800">
       <div className="w-full flex flex-wrap">
@@ -34,13 +27,13 @@ function Navbar() {
             {isNavOpen ? <AiOutlineClose size={25} color="white"/> : <AiOutlineMenu size={25} color="white"/>}
           </button>
         </div>
-        <div className={isNavOpen ? "flex w-full justify-end transition duration-1000 ease-in h-30" : "hidden"}>
-          <ul className="flex flex-col w-full list-none mt-2">
+        <div className={isNavOpen ? "flex w-full justify-end " : "hidden"}>
+          <ul className="flex flex-col w-full list-none mt-2 transition-all duration-1000 ease-in h-30">
             {[
               { name: 'About', href: '#about' },
               { name: 'Skills', href: '#skills' },
               { name: 'Projects', href: '#projects' },
-              { name: 'Contact', href: '#contact' },
+              { name: 'Reach Me', href: '#contacts' },
             ].map((item) => (
               <li className="nav-item w-full" key={item.name}>
                 <a
@@ -62,7 +55,7 @@ function Navbar() {
               { name: 'About', href: '#about' },
               { name: 'Skills', href: '#skills' },
               { name: 'Projects', href: '#projects' },
-              { name: 'Contact', href: '#contact' },
+              { name: 'Reach Me', href: '#contacts' },
             ].map((item) => (
               <li className="nav-item" key={item.name}>
                 <a
