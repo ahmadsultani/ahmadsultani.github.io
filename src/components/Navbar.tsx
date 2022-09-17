@@ -31,8 +31,8 @@ function Navbar() {
           <ul className="flex flex-col w-full list-none mt-2">
             {[
               { name: 'About', href: '#about' },
-              { name: 'Skills', href: '#skills' },
               { name: 'Projects', href: '#projects' },
+              { name: 'Skills', href: '#skills' },
               { name: 'Reach Me', href: '#connect' },
             ].map((item) => (
               <li className="nav-item w-full" key={item.name}>
@@ -53,8 +53,8 @@ function Navbar() {
           <ul className="flex w-full justify-end list-none">
             {[
               { name: 'About', href: '#about' },
-              { name: 'Skills', href: '#skills' },
               { name: 'Projects', href: '#projects' },
+              { name: 'Skills', href: '#skills' },
               { name: 'Reach Me', href: '#connect' },
             ].map((item) => (
               <li className="nav-item" key={item.name}>
