@@ -17,9 +17,9 @@ function Skills() {
             You can check my <a href="https://" className="font-semibold text-yellow-500">Resume</a> and get to know more.
           </p>
         </div>
-        <div className="flex flex-wrap w-full px-4 sm:px-0 sm:w-4/5 lg:w-3/5 sm:mx-auto">
+        <div className="flex flex-wrap w-full px-2 sm:px-0 sm:w-4/5 lg:w-3/5 sm:mx-auto">
           {skills.map((skill: any) => (
-            <div className="w-full sm:w-1/2 p-2 sm:p-4 sm:mx-auto mx-4">
+            <div className="w-full sm:w-1/2 sm:p-4 py-2 sm:mx-auto mx-4">
               <div className="flex flex-row justify-start bg-gray-800 p-4 rounded-xl items-center">
                 <img className="h-9 w-9 object-cover object-center "
                   src={skill.image}

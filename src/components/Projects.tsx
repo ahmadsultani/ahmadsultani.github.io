@@ -20,7 +20,7 @@ function Projects() {
         <div className="flex flex-wrap mx-auto px-8">
           {
             projects.map((project) => (
-              <div className="xl:w-1/3 md:w-1/2 p-4">
+              <div className="xl:w-1/3 md:w-1/2 md:p-4 py-4">
                 <div className="bg-gray-800 p-6 rounded-lg h-full">
                   <img className="h-40 rounded w-full object-cover object-top mb-6 opacity-70"
                     src={project.image}
