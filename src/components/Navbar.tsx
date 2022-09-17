@@ -28,7 +28,7 @@ function Navbar() {
           </button>
         </div>
         <div className={isNavOpen ? "flex w-full justify-end " : "hidden"}>
-          <ul className="flex flex-col w-full list-none mt-2 transition-all duration-1000 ease-in h-30">
+          <ul className="flex flex-col w-full list-none mt-2">
             {[
               { name: 'About', href: '#about' },
               { name: 'Skills', href: '#skills' },
