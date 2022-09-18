@@ -11,13 +11,13 @@ function Skills() {
           <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
             Skills &amp; Technologies
           </h1>
-          <p className="w-2/3 mx-auto leading-relaxed text-base mb-4">
+          <p className="md:w-2/3 w-auto md:mx-auto leading-relaxed text-base mb-4">
             These are some of my skills and technologies that i use in website development.
             <br />
             You can check my <a href="https://" className="font-semibold text-yellow-500">Resume</a> and get to know more.
           </p>
         </div>
-        <div className="flex flex-wrap w-full px-2 sm:px-0 sm:w-4/5 lg:w-3/5 sm:mx-auto">
+        <div className="flex flex-wrap w-full sm:px-2 sm:w-4/5 lg:w-3/5 sm:mx-auto">
           {skills.map((skill: any) => (
             <div className="w-full sm:w-1/2 sm:p-4 py-2 sm:mx-auto mx-4">
               <div className="flex flex-row justify-start bg-gray-800 p-4 rounded-xl items-center">
