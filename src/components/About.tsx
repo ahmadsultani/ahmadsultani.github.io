@@ -5,13 +5,13 @@ function About() {
     <section id="about">
       <div className="container mx-auto flex flex-col items-center px-10 py-20">
         <div className="flex flex-col items-center flex-grow ">
-          <img className="object-center xl:w-1/5 lg:w-1/4 md:w-1/3 w-2/3 mb-6 border-4 border-yellow-600 rounded-full opacity-70" src={profile} alt="profile" />
-          <h1 className="title-font sm:text-4xl text-3xl font-medium mb-8 text-center text-white">
+          <img className="object-center xl:w-1/5 lg:w-1/4 sm:w-1/3 w-2/3 mb-6 border-4 border-yellow-500 rounded-full opacity-70" src={profile} alt="profile" />
+          <h1 className="title-font sm:text-4xl text-3xl font-medium mb-4 text-center text-white">
             Hi, I'm Sultani
             <br />
             Learner | Coder
           </h1>
-          <p className="mb-8 leading-relaxed md:text-lg text-md text-center lg:w-2/3 w-auto">
+          <p className="mb-8 leading-relaxed md:text-lg xs:text-sm text-center lg:w-2/3 w-auto">
             Sometimes an educator, sometimes a student, but alltimes a learner.
             <br />
             A second year student of Informatics Engineering, Hasanuddin University.
