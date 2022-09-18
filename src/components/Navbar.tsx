@@ -15,7 +15,7 @@ function Navbar() {
         <div className="lg:w-1/2 w-full flex justify-between">
           <a
             className="title-font text-md font-bold inline-block mr-4 py-1 whitespace-no-wrap uppercase text-white"
-            href="#home"
+            href="#about"
           >
             Sultani
           </a>
