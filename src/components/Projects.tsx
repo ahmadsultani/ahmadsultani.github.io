@@ -12,7 +12,7 @@ function Projects() {
           <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
             Recent Projects
           </h1>
-          <p className="w-auto md:w-3/5 md:mx-auto mx-2 leading-relaxed text-base mb-4">
+          <p className="w-auto md:w-3/5 md:mx-auto mx-8 leading-relaxed text-base mb-4">
             These are recent projects especially on website development that i made for educational purpose.
             <br />Check my <a href="https://github.com/ahmadsultani" target="_blank" className="text-yellow-500 font-semibold" rel="noreferrer">Github Repositories</a> to see my other works.
           </p>
