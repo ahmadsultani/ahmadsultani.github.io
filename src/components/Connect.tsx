@@ -10,7 +10,7 @@ function Connect() {
             <h1 className="text-[26px] sm:text-3xl font-medium title-font text-white">
               Reach Me
             </h1>
-            <p className="leading-relaxed mx-2 sm:mx-auto">
+            <p className="text-sm sm:text-md leading-relaxed mx-2 sm:mx-auto">
               If you have any questions or want to collaborate with me, feel free
               to contact me.
               <br />

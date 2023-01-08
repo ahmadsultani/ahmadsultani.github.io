@@ -11,7 +11,7 @@ function Skills() {
           <h1 className="text-[26px] sm:text-3xl font-medium title-font mb-4 text-white">
             Skills &amp; Technologies
           </h1>
-          <p className="md:w-2/3 w-auto sm:mx-auto leading-relaxed text-md mb-4">
+          <p className="text-sm sm:text-md md:w-2/3 w-auto sm:mx-auto leading-relaxed text-md mb-4">
             These are some of my skills and technologies that i use in website development.
             <br />
             You can check my <a href="https://drive.google.com/file/d/1cGLw3_No1wm8D1HgsCE1Xn8j8t4LCWn3/view?usp=sharing" target="_blank" rel="noreferrer" className="font-semibold text-yellow-500">Resume</a>  and get to know more.
