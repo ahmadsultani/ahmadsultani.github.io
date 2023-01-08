@@ -15,7 +15,7 @@ function About() {
             <br />
             Learner | Coder
           </h1>
-          <p className="mb-8 leading-relaxed :text-md xs:text-sm text-center lg:w-2/3 md:w-3/4 sm:w-4/5 w-5/6">
+          <p className="mb-8 leading-relaxed text-xs md:text-md  text-center lg:w-2/3 md:w-3/4 sm:w-4/5 w-5/6">
             Sometimes an educator, sometimes a student, but alltimes a learner.
             <br />
             A second year student of Informatics Engineering, Hasanuddin
@@ -27,13 +27,13 @@ function About() {
               href="https://wa.me/6282193179080"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex text-white bg-yellow-500 border-0 py-2 sm:px-6 px-3 focus:outline-none hover:bg-yellow-600 rounded md:text-lg sm:text-md text-sm"
+              className="inline-flex text-white bg-yellow-500 border-0 py-2 sm:px-6 px-3 focus:outline-none hover:bg-yellow-600 rounded text-sm md:text-lg sm:text-md xs:text-sm  "
             >
               Contact Me
             </a>
             <a
               href="#projects"
-              className=" ml-6 inline-flex text-gray-400 bg-gray-800 border-0 py-2 sm:px-6 px-3 focus:outline-none hover:bg-gray-700 hover:text-white rounded md:text-lg sm:text-md text-sm"
+              className=" ml-6 inline-flex text-gray-400 bg-gray-800 border-0 py-2 sm:px-6 px-3 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-sm md:text-lg sm:text-md text-sm"
             >
               See My Works
             </a>

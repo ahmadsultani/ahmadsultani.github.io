@@ -8,10 +8,10 @@ function Skills() {
       <ImStackoverflow size={50} className="mx-auto mb-6" />
       <div className="container mx-auto px-4 text-center">
         <div className="flex flex-col w-full ">
-          <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
+          <h1 className="text-2xl sm:text-3xl font-medium title-font mb-4 text-white">
             Skills &amp; Technologies
           </h1>
-          <p className="md:w-2/3 w-auto md:mx-auto mx-8 leading-relaxed text-base mb-4">
+          <p className="md:w-2/3 w-auto sm:mx-auto mx-8 leading-relaxed text-sm sm:text-md mb-4">
             These are some of my skills and technologies that i use in website development.
             <br />
             You can check my <a href="https://drive.google.com/file/d/1cGLw3_No1wm8D1HgsCE1Xn8j8t4LCWn3/view?usp=sharing" target="_blank" rel="noreferrer" className="font-semibold text-yellow-500">Resume</a>  and get to know more.

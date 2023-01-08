@@ -9,10 +9,10 @@ function Projects() {
       <div className="container text-center mx-auto">
         <div className="flex flex-col w-full">
           <FaReact size={60} className="mx-auto mb-6"/>
-          <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
+          <h1 className="text-3xl font-medium title-font mb-4 text-white">
             Recent Projects
           </h1>
-          <p className="w-auto md:w-3/5 md:mx-auto mx-8 leading-relaxed text-base mb-4">
+          <p className="w-auto md:w-3/5 md:mx-auto mx-8 leading-relaxed text-sm md:text-md mb-4">
             These are recent projects especially on website development 
             <br />
             that i made for educational purpose.

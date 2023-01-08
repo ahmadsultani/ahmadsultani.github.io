@@ -6,10 +6,10 @@ function Connect() {
       <div className="container mx-auto px-8 pb-8 text-center">
         <div className="flex flex-col justify-center w-full ">
           <MdOutlineConnectWithoutContact size={60} className="mx-auto mb-6" />
-          <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
+          <h1 className="text-2xl sm:text-3xl font-medium title-font mb-4 text-white">
             Reach Me
           </h1>
-          <p className="leading-relaxed">
+          <p className="leading-relaxed mx-2 sm:mx-auto text-sm sm:text-md">
             If you have any questions or want to collaborate with me, feel free
             to contact me.
           </p>
@@ -85,7 +85,7 @@ function Connect() {
             href="https://wa.me/6282193179080"
             target="_blank"
             rel="noreferrer"
-            className="text-base mx-auto mt-6 w-30 text-white bg-yellow-500 border-0 py-2 px-3 focus:outline-none hover:bg-yellow-600 rounded text-md"
+            className="text-sm sm:text-base mx-auto mt-6 w-30 text-white bg-yellow-500 border-0 py-2 px-3 focus:outline-none hover:bg-yellow-600 rounded text-md"
           >
             Send Message!
           </a>
