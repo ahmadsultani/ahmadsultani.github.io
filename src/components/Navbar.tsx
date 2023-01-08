@@ -6,10 +6,10 @@ function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const navMenuClass = classNames(
-    "z-50 flex justify-end w-full h-0 opacity-0 transition duration-500 ease-out lg:hidden",
+    "nav-content z-50 flex justify-end h-0 w-full lg:hidden",
     {
-      "visible opacity-100 h-auto": isNavOpen,
-      invisible: !isNavOpen,
+      "visible bg-gray-800 h-100": isNavOpen,
+      "hidden": !isNavOpen,
     }
   );
 
