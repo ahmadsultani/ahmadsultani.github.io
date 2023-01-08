@@ -8,7 +8,7 @@ function Projects() {
     <section id="projects">
       <div className="container text-center mx-auto">
         <div className="flex flex-col w-full">
-          <FaReact size={60} className="mx-auto mb-6" />
+          <FaReact size={60} className="mx-auto mb-6"/>
           <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
             Recent Projects
           </h1>
