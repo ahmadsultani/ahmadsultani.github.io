@@ -1,7 +1,6 @@
 import { useState } from "react";
 import classNames from "classnames";
 
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -10,7 +9,7 @@ function Navbar() {
     "z-50 flex justify-end w-full h-0 opacity-0 transition duration-500 ease-out lg:hidden",
     {
       "visible opacity-100 h-auto": isNavOpen,
-      invisible: !isNavOpen
+      invisible: !isNavOpen,
     }
   );
 
@@ -32,14 +31,22 @@ function Navbar() {
             Sultani
           </a>
           <button
-            className="cursor-pointer mx-0 text-xl block lg:hidden rotate-0 active:rotate-[120deg] duration-200 outline-none focus:outline-none"
+            className="nav-toggle cursor-pointer mx-0 lg:hidden focus:outline-none"
             type="button"
             onClick={toggleNav}
           >
             {isNavOpen ? (
-              <AiOutlineClose size={25} color="white" />
+              <div className="nav-icon-close flex flex-col flex-shrink-0 gap-1.5">
+                <div className="icon-bar bg-white w-[22px] h-[2px]">&nbsp;</div>
+                <div className="icon-bar bg-white w-[22px] h-[2px]">&nbsp;</div>
+                <div className="icon-bar bg-white w-[22px] h-[2px]">&nbsp;</div>
+              </div>
             ) : (
-              <AiOutlineMenu size={25} color="white" />
+              <div className="nav-icon flex flex-col flex-shrink-0 gap-1.5">
+                <div className="icon-bar bg-white w-[22px] h-[2px]">&nbsp;</div>
+                <div className="icon-bar bg-white w-[22px] h-[2px]">&nbsp;</div>
+                <div className="icon-bar bg-white w-[22px] h-[2px]">&nbsp;</div>
+              </div>
             )}
           </button>
         </div>
