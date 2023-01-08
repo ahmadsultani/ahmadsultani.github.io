@@ -6,7 +6,7 @@ import Connect from "./components/Connect";
 
 function App() {
   return (
-    <main className="text-gray-400 bg-gray-900 body-font">
+    <main className="text-gray-400 bg-gray-900">
       <Navbar />
       <About />
       <Projects />

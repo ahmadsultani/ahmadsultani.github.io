@@ -6,7 +6,7 @@ function About() {
       <div className="container mx-auto flex flex-col items-center px-10 py-20">
         <div className="flex flex-col items-center flex-grow ">
           <img
-            className="object-center xl:w-1/5 lg:w-1/4 sm:w-1/3 w-2/3 mb-6 border-4 border-yellow-500 rounded-full opacity-70"
+            className="object-center xl:w-1/5 lg:w-1/4 sm:w-1/3 w-2/3 mb-6 border-4 border-yellow-500 rounded-full opacity=90"
             src={profile}
             alt="profile"
           />
@@ -15,13 +15,12 @@ function About() {
             <br />
             Learner | Coder
           </h1>
-          <p className="mb-8 leading-relaxed md:text-lg xs:text-sm text-center lg:w-2/3 md:w-3/4 sm:w-4/5 w-5/6">
+          <p className="mb-8 leading-relaxed :text-md xs:text-sm text-center lg:w-2/3 md:w-3/4 sm:w-4/5 w-5/6">
             Sometimes an educator, sometimes a student, but alltimes a learner.
             <br />
             A second year student of Informatics Engineering, Hasanuddin
             University.
-            <br />I am really passionate about coding, especially in website and
-            mobile development.
+            <br />I am really passionate about coding, especially in website development.
           </p>
           <div className="flex justify-center ">
             <a
