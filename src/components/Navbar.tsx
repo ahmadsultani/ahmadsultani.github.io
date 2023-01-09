@@ -22,7 +22,7 @@ function Navbar() {
       id="navbar"
       className="fixed top-0 z-10 w-full items-center justify-between"
     >
-      <div className="w-full flex flex-wrap bg-gray-800 px-8 py-3">
+      <div className="w-full flex flex-wrap bg-gray-800 px-8 py-4 sm:py-3">
         <div className="lg:w-1/2 w-full items-center flex justify-between">
           <a
             className="title-font text-md font-bold uppercase text-white"
