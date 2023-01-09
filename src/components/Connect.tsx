@@ -11,10 +11,13 @@ function Connect() {
               Reach Me
             </h1>
             <p className="text-sm sm:text-md leading-relaxed mx-2 sm:mx-auto">
-              If you have any questions or want to collaborate with me, feel free
-              to contact me.
+              If you have any questions or want to collaborate, feel free to
+              contact me.
               <br />
-              For professional work, email me at <span className="text-yellow-500 font-semibold">ahmadsultanidayanullah@gmail.com</span>
+              For professional work, email me at{" "}
+              <span className="text-yellow-500 font-semibold">
+                ahmadsultanidayanullah@gmail.com
+              </span>
             </p>
           </div>
           <div className="flex flex-row justify-center gap-4 sm:gap-6">
