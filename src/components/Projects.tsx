@@ -12,10 +12,8 @@ function Projects() {
           <h1 className="text-[26px] sm:text-3xl font-medium title-font mb-4 text-white">
             Recent Projects
           </h1>
-          <p className="w-auto md:w-3/5 md:mx-auto text-sm sm:text-md leading-relaxed mb-4">
-            These are recent projects especially on website development 
-            <br />
-            that i made for educational purpose.
+          <p className="w-auto md:w-5/6 md:mx-auto text-sm sm:text-md leading-relaxed mb-4">
+            These are recent projects especially on website development that i made for educational purpose.
             <br />
             Check my{" "}
             <a
