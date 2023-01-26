@@ -76,7 +76,3 @@ export const languages = [
   { name: "Javascript", image: javascript},
   { name: "Typescript", image: typescript },
 ]
-
-export const softskills = {
-
-}
