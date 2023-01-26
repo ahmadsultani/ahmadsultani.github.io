@@ -2,20 +2,20 @@ import { projects } from "../data";
 
 import { FaReact } from "react-icons/fa";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import Section from "./Section";
 
 function Projects() {
   return (
-    <section id="projects">
-      <div className="container text-center mx-auto px-8">
-        <div className="flex flex-col w-full">
-          <FaReact size={60} className="mx-auto mb-6"/>
-          <h1 className="text-[26px] sm:text-3xl font-medium title-font mb-4 text-white">
+    <Section id="projects">
+      <div className="flex items-center w-full justify-between">
+        <FaReact size={200} className="absolute opacity-10 -ml-20" />
+        <div className="flex flex-col w-4/5 gap-2">
+          <h1 className="text-[26px] sm:text-5xl font-medium title-font text-white">
             Recent Projects
           </h1>
-          <p className="w-auto md:w-5/6 md:mx-auto text-sm sm:text-md leading-relaxed mb-4">
-            These are recent projects especially on website development that i made for educational purpose.
-            <br />
-            Check my{" "}
+          <p className=" md:w-4/5 text-sm sm:text-md leading-relaxed">
+            These are recent projects especially on website development that i
+            made for educational purpose. Check my{" "}
             <a
               href="https://github.com/ahmadsultani"
               target="_blank"
@@ -27,38 +27,43 @@ function Projects() {
             to see my other works.
           </p>
         </div>
-        <div className="flex flex-wrap mx-auto">
-          {projects.map((project) => (
-            <div className="xl:w-1/3 md:w-1/2 md:p-4 py-4">
-              <div className="bg-gray-800 rounded-lg">
-                <img
-                  className="h-[200px] rounded w-full object-scale object-top opacity-80"
-                  src={project.image}
-                  alt="content"
-                />
-                <div className="p-6">
-                  <h2 className="text-left text-lg text-white font-medium title-font mb-2">
-                    {project.title}
-                  </h2>
-                  <p className="leading-relaxed text-sm text-justify xl:h-1/4">
-                    {project.description}
-                  </p>
-                  <a
-                    className="mt-3 text-yellow-500 flex text-sm justify-end items-center"
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Learn More
-                    {<AiOutlineArrowRight className="w-4 h-4 ml-2" />}
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <a
+          href="https://github.com/ahmadsultani"
+          target="_blank"
+          rel="noreferrer"
+          className="outline-btn flex items-center gap-2 text-yellow-400  border-2 border-yellow-500 hover:text-white hover:bg-yellow-500  py-2 px-6 focus:outline-none rounded text-[14px] "
+        >
+          See More <AiOutlineArrowRight size={16} />
+        </a>
       </div>
-    </section>
+      <div className="container flex flex-wrap w-full justify-center gap-[36px]">
+        {projects.map((project) => (
+          <div className="flex flex-col w-[48%] lg:w-[calc(33%-30px)] gap-4 bg-gray-800 justify-between pb-4">
+            <img
+              className="h-[200px] w-full object-cover object-top opacity-80"
+              src={project.image}
+              alt="content"
+            />
+            <div className="flex flex-col gap-2 px-5">
+              <h2 className="text-left text-[18px] text-white">
+                {project.title}
+              </h2>
+              <p className="text-justify text-[12px]">{project.description}</p>
+            </div>
+            <a
+              href="https://github.com/ahmadsultani"
+              target="_blank"
+              rel="noreferrer"
+              className="outline-btn flex flex-grow items-end self-end  text-yellow-400 px-5 focus:outline-none rounded text-[12px] "
+            >
+              <div className="flex gap-2 items-center">
+                Learn More <AiOutlineArrowRight size={12} />
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+    </Section>
   );
 }
 

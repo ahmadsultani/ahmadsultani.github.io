@@ -11,6 +11,10 @@
 # production
 /build
 
+
+#Oldfiles
+/src/components/Hero/Old
+
 # misc
 .DS_Store
 .env.local

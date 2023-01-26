@@ -1,0 +1,29 @@
+.headline {
+  position: relative;
+  background: -webkit-linear-gradient(left, #FCE043, #F39F86 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* .about-container {
+  background-image: url('../../assets/images/bg.png' );
+  background-size: 100% 100%;
+} */
+
+@keyframes caret {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+
+.headline::after {
+  content: ""; 
+  border-right: 2px solid white;
+  padding-right: 3px;
+  font-weight: 300;
+  animation: caret 0.7s linear infinite alternate;
+}

@@ -7,17 +7,21 @@ import project6 from "./assets/images/project6.jpeg";
 import react from "./assets/images/react.jpeg";
 import tailwind from "./assets/images/tailwind.png";
 import bootstrap from "./assets/images/bootstrap.png";
-import nodejs from "./assets/images/nodejs.png";
-import jquery from "./assets/images/jquery.png";
-import hapi from "./assets/images/hapi.png";
+import html from "./assets/images/html.svg";
+import css from "./assets/images/css.svg";
+import typescript from "./assets/images/typescript.svg";
+import javascript from "./assets/images/javascript.svg";
+import chakraui from "./assets/images/chakraui.svg";
+import nextjs from "./assets/images/nextjs.svg";
+import redux from "./assets/images/redux.svg";
 
 export const projects = [
   {
-    title: "Bookshelf API",
+    title: "Notes App",
     description:
-      'Last project from dicoding "Belajar Aplikasi Back-End untuk Pemula" course. Created with HAPI Framework on Node.js',
+      'Last project from dicoding "Belajar Membuat Aplikasi Web dengan React" course. Created with React Components Style to ensure a strong fundamentals',
     image: project1,
-    link: "https://github.com/ahmadsultani/bookshelf-api",
+    link: "https://github.com/ahmadsultani/notes-app",
   },
   {
     title: "Bookshelf App",
@@ -29,21 +33,21 @@ export const projects = [
   {
     title: "Todo App",
     description:
-      'Todo Application that I made as an exercise from my "Anorite" project leader. Created with React on Typescript and Chakra UI',
+      'Todo Application, an exercise from my volunteer project leader. Created with React on Typescript and Chakra UI',
     image: project3,
     link: "https://github.com/ahmadsultani/todo-redux",
   },
   {
-    title: "Portfolio Website",
+    title: "Login/Signup Page",
     description:
-      "My old portfolio that i made with basic HTML, CSS, Javascript. I also used a bit of Bootstrap 3 and jQuery",
+      "My collaboration project with one of my college friend as a designer. Made with next.js and using atomic components paradigm",
     image: project4,
-    link: "https://github.com/ahmadsultani/old-portfolio",
+    link: "https://github.com/ahmadsultani/login-signup",
   },
   {
     title: "Currency Converter",
     description:
-      "Currency Converter App that built with React Hook, Typescript, Chakra UI, and also Exchange Rate Data API from API Layer",
+      "Currency Converter App that built with React Hook, Typescript, Chakra UI, and also Exchange Rate API from API Layer",
     image: project5,
     link: "https://github.com/ahmadsultani/currency-converter",
   },
@@ -56,11 +60,23 @@ export const projects = [
   },
 ];
 
-export const skills = [
-  { name: "React", image: react },
+export const frameworks = [
+  { name: "React.js", image: react },
+  { name: "Next.js", image: nextjs },
   { name: "Tailwind CSS", image: tailwind },
   { name: "Bootstrap", image: bootstrap },
-  { name: "Node.js", image: nodejs },
-  { name: "jQuery", image: jquery },
-  { name: "HAPI", image: hapi },
+  { name: "Chakra UI", image: chakraui },
+  { name: "Redux", image: redux },
 ];
+
+
+export const languages = [
+  { name: "HTML", image: html },
+  { name: "CSS", image: css },
+  { name: "Javascript", image: javascript},
+  { name: "Typescript", image: typescript },
+]
+
+export const softskills = {
+
+}
