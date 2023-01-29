@@ -22,7 +22,7 @@ function Skills() {
             These are some of my technology stacks that i use in Front End
             Development. You can check my{" "}
             <a
-              href="https://drive.google.com/file/d/1cGLw3_No1wm8D1HgsCE1Xn8j8t4LCWn3/view?usp=sharing"
+              href="https://drive.google.com/file/d/1vxmEzlDIrVZSvL1HLEBKAt2q5_t1z1o-/view?usp=sharing"
               target="_blank"
               className="text-yellow-500 font-semibold"
               rel="noreferrer"
@@ -33,7 +33,7 @@ function Skills() {
           </p>
         </div>
         <a
-          href="https://drive.google.com/file/d/1cGLw3_No1wm8D1HgsCE1Xn8j8t4LCWn3/view?usp=sharing"
+          href="https://drive.google.com/file/d/1vxmEzlDIrVZSvL1HLEBKAt2q5_t1z1o-/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
           className="outline-btn flex items-center gap-2 text-yellow-400  border-2 border-yellow-500 hover:text-white hover:bg-yellow-500  py-2 px-6 focus:outline-none rounded text-[14px] "
