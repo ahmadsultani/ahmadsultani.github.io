@@ -31,9 +31,9 @@ export default function About() {
                 10+<p className="text-xs text-gray-300 font-light">projects</p>
               </span>
               <span className="flex text-5xl items-end">
-                1+
+                1.5+
                 <p className="text-[10px] text-gray-300 font-light">
-                  years studying
+                  years in
                   <br />
                   front-end
                 </p>
