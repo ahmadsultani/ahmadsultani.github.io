@@ -5,7 +5,7 @@ import profile from "../../assets/images/profile-baru.png";
 import "./Hero.css";
 
 export default function Hero() {
-  const texts = useMemo(() => ["Front-end Developer", "Problem Solver"], []);
+  const texts = useMemo(() => ["Front End Dev", "Problem Solver"], []);
   const [text, setText] = useState(texts[0]);
   const [isTyping, setIsTyping] = useState(true);
   const [headline, setHeadline] = useState("\u200B");
@@ -33,49 +33,46 @@ export default function Hero() {
       }
     }, 100);
     return () => clearTimeout(timeout);
-  }, [headline, isTyping, text, counter, texts]);
+  }, [headline, isTyping, counter, texts, text]);
 
   return (
     <section
       id="hero"
-      className="about-container h-screen w-full flex flex-row justify-between items-center bg-gray-800 px-10 pt-8 xl:px-40"
+      className="about-container h-screen w-full flex justify-between items-center bg-gray-800 xl:px-40"
     >
-      <div className="flex flex-col self-center shrink-0 gap-8">
-        <div className="title flex flex-col gap-2">
-          <h1 className="title-font text-3xl text-white opacity-80 ">
+      <div className="flex leading-relaxed flex-col self-center shrink-0 gap-8 w-7/12">
+        <div className="flex flex-col gap-3">
+          <h1 className="title-font text-2xl text-white opacity-80 ">
             I'm Ahmad Sultani
           </h1>
-          <h1 className="title-font font-semibold text-5xl text-transparent headline">
+          <h1 className="title-font font-semibold text-6xl text-transparent headline">
             {headline}
           </h1>
-        </div>
         <p className="leading-relaxed text-[14px]">
-          Sometimes an educator, sometimes a student, but alltimes a learner.
+          Sometimes an educator, sometimes a developer, but alltimes a learner.
           <br />
-          A second year student of Infor matics Engineering, Hasanuddin
-          University.
-          <br />I am really passionate about coding, especially in website
-          development.
+          I am really passionate about Website Development, especially in Front End.
         </p>
+        </div>
         <div className="flex gap-6">
           <a
             href="https://wa.me/6282193179080"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 text-white bg-yellow-500   py-2 px-4 focus:outline-none hover:opacity-80 rounded text-[14px] "
+            className="flex items-center gap-2 text-transparent hover:font-medium opacity-80 border-2 rounded text-[14px] py-2 px-4 btn-fill-animation arrow-parent"
           >
-            Contact Me <AiOutlineArrowRight size={16} />
+            <p className="shrink-0 z-10">Contact Me</p> <AiOutlineArrowRight size={14} className="arrow z-10" />
           </a>
           <a
             href="#projects"
-            className="flex items-center gap-2 text-white bg-gray-700 py-2 px-4 focus:outline-none hover:opacity-80 rounded text-[14px] cursor-pointer "
+            className="flex items-center hover:font-medium rounded text-[14px] cursor-pointer   "
           >
-            See My Works <AiOutlineArrowRight size={14} />{" "}
+           <p className="btn-underline-animation shrink-0">See My Works</p>
           </a>
         </div>
       </div>
       <img
-        className="object-center w-[280px] h-fit pb-12 rounded-full"
+        className="object-center w-[280px] h-fit pb-12 rounded-full sm:pt-4"
         src={profile}
         alt="profile"
       />

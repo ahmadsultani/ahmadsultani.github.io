@@ -5,10 +5,68 @@
   background-clip: text;
 }
 
-/* .about-container {
-  background-image: url('../../assets/images/bg.png' );
-  background-size: 100% 100%;
-} */
+.btn-fill-animation {
+  position: relative;
+  z-index: 2;
+  /* color: rgb(234 179 8); */
+  color: #FCE043;
+  border: 2px solid #FCE043;
+  transition: 1s
+}
+
+.btn-fill-animation:hover {
+  transition: 1s linear;
+  color: #1f2937;
+}
+
+.arrow-parent .arrow {
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+.arrow-parent:hover .arrow {
+  width: 100%;
+}
+
+.btn-fill-animation:first-child:before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: -webkit-linear-gradient(left, #FCE043 56%, #F39F86 90%);
+  transition: width 0.5s ease;
+}
+
+.btn-fill-animation:hover:first-child:before {
+  width: 100%;
+}
+
+.btn-underline-animation {
+  position: relative; 
+  z-index: 2;
+  transition: 0.5s
+}
+
+.btn-underline-animation::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: -2px;
+  background: #8f9b93;
+  transition: width 0.5s ease;
+}
+
+.btn-underline-animation:hover::after {
+  width: calc(100% + 4px);
+}
+
+
+
 
 @keyframes caret {
   0%, 100% {
