@@ -36,13 +36,16 @@ function Projects() {
           See More <AiOutlineArrowRight size={16} />
         </a>
       </div>
-      <div className="container flex flex-wrap w-full justify-center gap-[36px]">
-        {projects.map((project) => (
-          <div className="flex flex-col w-[48%] lg:w-[calc(33%-30px)] gap-4 bg-gray-800 justify-between pb-4">
+      <ul className="container flex flex-wrap w-full justify-center gap-[36px]">
+        {projects.map((project, index) => (
+          <li className="flex flex-col w-[48%] lg:w-[calc(33%-30px)] gap-4 bg-gray-800 justify-between pb-4"
+            key={`project-${index}`}
+          >
             <img
               className="h-[200px] w-full object-cover object-top opacity-80"
               src={project.image}
               alt="content"
+              loading="lazy"
             />
             <div className="flex flex-col gap-2 px-5">
               <h2 className="text-left text-[18px] text-white">
@@ -54,15 +57,15 @@ function Projects() {
               href="https://github.com/ahmadsultani"
               target="_blank"
               rel="noreferrer"
-              className="outline-btn flex flex-grow items-end self-end  text-yellow-400 px-5 focus:outline-none rounded text-[12px] "
+              className="outline-btn flex flex-grow items-end self-end  text-yellow-400 px-5 pb-2 focus:outline-none arrow-parent rounded text-[12px] "
             >
               <div className="flex gap-2 items-center">
-                Learn More <AiOutlineArrowRight size={12} />
+                <p className="shrink-0">Learn More</p> <AiOutlineArrowRight size={12} className="arrow "/>
               </div>
             </a>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </Section>
   );
 }
