@@ -5,6 +5,13 @@
   background-clip: text;
 }
 
+.img-profile {
+  background-image: url('../../assets/images/blurred/profile-baru.webp');
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .btn-fill-animation {
   position: relative;
   z-index: 2;

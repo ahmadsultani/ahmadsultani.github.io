@@ -1,7 +1,6 @@
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 import profile from "../../assets/images/profile-baru.webp";
-import profileBlur from "../../assets/images/blurred/profile-baru.webp";
 import Headline from "./Headline";
 import "./Hero.css";
 
@@ -42,10 +41,9 @@ export default function Hero() {
         </div>
       </div>
       <img
-        className="object-center w-[300px] pb-12 rounded-full sm:pt-6"
+        className="img-profile object-center w-[320px] h-fit rounded-full mb-4"
         src={profile}
         alt="profile"
-        placeholder={profileBlur}
       />
     </section>
   );
