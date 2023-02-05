@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function InputBox({ label }: { label: string }) {
   return (
     <div className="flex flex-col gap-2 text-gray-300">
