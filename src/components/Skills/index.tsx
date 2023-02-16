@@ -22,7 +22,7 @@ function Skills() {
             These are some of my technology stacks that i use in Front End
             Development. You can check my{" "}
             <a
-              href="https://drive.google.com/file/d/1vxmEzlDIrVZSvL1HLEBKAt2q5_t1z1o-/view?usp=sharing"
+              href="https://drive.google.com/drive/folders/1kfVMkSM_oPcPKzTu25pDgJiziF_GuXxM?usp=sharing"
               target="_blank"
               className="text-yellow-500 font-semibold"
               rel="noreferrer"
