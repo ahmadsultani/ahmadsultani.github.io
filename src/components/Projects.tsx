@@ -14,8 +14,8 @@ function Projects() {
             Recent Projects
           </h1>
           <p className=" md:w-4/5 text-sm sm:text-md leading-relaxed">
-            These are recent projects especially on website development that i
-            made for educational purpose. Check my{" "}
+            These are some of my projects especially on frontend development that i
+            made using React and Nextjs. Check my{" "}
             <a
               href="https://github.com/ahmadsultani"
               target="_blank"
@@ -24,7 +24,7 @@ function Projects() {
             >
               Github Repositories
             </a>{" "}
-            to see my other works.
+            to see my other works. There are more than <b>15 projects</b> in my github repositories
           </p>
         </div>
         <a
