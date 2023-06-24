@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3c5536cd.css",
+    "main.js": "/static/js/main.17ac2c2c.js",
+    "static/js/787.e088a726.chunk.js": "/static/js/787.e088a726.chunk.js",
+    "static/media/profile.png": "/static/media/profile.b68e32034ff34aa44a85.png",
+    "static/media/bootstrap.webp": "/static/media/bootstrap.871e72874824ff76dbce.webp",
+    "static/media/project6.webp": "/static/media/project6.8cb06dad852bf46f23f0.webp",
+    "static/media/react.webp": "/static/media/react.470be94987d1e1e19ade.webp",
+    "static/media/project1.webp": "/static/media/project1.4d821b0a8aaf4c9304ce.webp",
+    "static/media/project4.webp": "/static/media/project4.16b65c76a36b72bf851c.webp",
+    "static/media/project3.webp": "/static/media/project3.8d715444be6920abe1c0.webp",
+    "static/media/project2.webp": "/static/media/project2.c6a42541cd083706d6bb.webp",
+    "static/media/project5.webp": "/static/media/project5.806f3417a08560a00c5b.webp",
+    "static/media/tailwind.webp": "/static/media/tailwind.43c1c136e8e62b0dbbc3.webp",
+    "static/media/redux.svg": "/static/media/redux.0e4fb1c819ac4c060c92343147d4ccf7.svg",
+    "static/media/javascript.svg": "/static/media/javascript.00f3e5cf8bcf4ae623b3835ca5791b15.svg",
+    "static/media/typescript.svg": "/static/media/typescript.a6305a733dd55243980aec55f96f70c5.svg",
+    "static/media/nextjs.svg": "/static/media/nextjs.b2041bc88cfcae668a79e1ae762dd0a5.svg",
+    "static/media/chakraui.svg": "/static/media/chakraui.61b03354f80fa68fd7f3dbb1ffdfc1bd.svg",
+    "index.html": "/index.html",
+    "static/media/css.svg": "/static/media/css.4e47c3122b8d2476a02f97dcfcb28640.svg",
+    "static/media/html.svg": "/static/media/html.f318c8b1d5945fa9adc827ae94849cb1.svg",
+    "main.3c5536cd.css.map": "/static/css/main.3c5536cd.css.map",
+    "main.17ac2c2c.js.map": "/static/js/main.17ac2c2c.js.map",
+    "787.e088a726.chunk.js.map": "/static/js/787.e088a726.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c5536cd.css",
+    "static/js/main.17ac2c2c.js"
+  ]
+}
