@@ -1,11 +1,10 @@
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-import profile from "../../assets/images/profile-baru.webp";
+import profile from "../../assets/images/profile.png";
 import Headline from "./Headline";
 import "./Hero.css";
 
 export default function Hero() {
-  console.log("im rerendered")
   return (
     <section
       id="hero"
@@ -34,14 +33,14 @@ export default function Hero() {
           </a>
           <a
             href="#projects"
-            className="flex items-center hover:font-medium rounded text-[14px] cursor-pointer   "
+            className="flex items-center hover:font-medium rounded text-[14px] cursor-pointer"
           >
            <p className="btn-underline-animation shrink-0">See My Works</p>
           </a>
         </div>
       </div>
       <img
-        className="img-profile object-center w-[320px] h-fit rounded-full mb-4"
+        className="img-profile object-center w-[320px] h-fit rounded-full"
         src={profile}
         alt="profile"
       />
