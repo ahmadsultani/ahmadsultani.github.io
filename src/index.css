@@ -8,9 +8,14 @@
     @apply scroll-mt-28;
   }
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   * {
     @apply scroll-smooth select-none;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+    scrollbar-width: none;
   }
-} 
+}
