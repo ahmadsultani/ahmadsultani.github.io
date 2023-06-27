@@ -1,6 +1,6 @@
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-import profile from "../../assets/images/profile.png";
+import profile from "../../assets/images/profile.webp";
 import Headline from "./Headline";
 import "./Hero.css";
 
