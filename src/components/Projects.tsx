@@ -15,7 +15,7 @@ function Projects() {
           </h1>
           <p className=" md:w-4/5 text-sm sm:text-md leading-relaxed">
             These are some of my projects especially on frontend development that i
-            made using React and Nextjs. Check my{" "}
+            made using Vanilla JavaScript, React, Vue.js and Nextjs. Check my{" "}
             <a
               href="https://github.com/ahmadsultani"
               target="_blank"
