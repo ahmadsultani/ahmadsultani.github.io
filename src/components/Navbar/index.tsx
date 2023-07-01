@@ -65,7 +65,7 @@ function Navbar() {
             {navItemArr.map((item) => (
               <li className="nav-item" key={item.name}>
                 <a
-                  className="px-3 py-2 flex items-center text-xs uppercase text-white"
+                  className="px-3 py-2 flex items-center text-xs uppercase"
                   href={item.href}
                 >
                   {item.name}
@@ -80,7 +80,7 @@ function Navbar() {
           {navItemArr.map((item) => (
             <li className="nav-item w-full flex " key={item.name}>
               <a
-                className="px-8 py-4 flex text-xs w-full justify-end uppercase text-white bg-gray-800"
+                className="px-8 py-4 flex text-xs w-full justify-end uppercase bg-gray-800"
                 href={item.href}
                 onClick={toggleNav}
               >

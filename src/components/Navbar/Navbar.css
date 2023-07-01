@@ -1,10 +1,10 @@
 /* nav-item not hover */
-.nav-content ul:hover a:not(:hover) {
+.nav-content ul:hover .nav-item:not(:hover) {
   color: rgba(255, 255, 255, 0.3);
   transition: all 0.6s ease;
 } 
 
-.nav-content ul a {
+.nav-content ul .nav-item {
   color: white;
   transition: all 0.6s ease;
 }
