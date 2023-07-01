@@ -36,9 +36,9 @@ function Projects() {
           See More <AiOutlineArrowRight size={16} />
         </a>
       </div>
-      <ul className="container flex flex-wrap w-full justify-center gap-[36px]">
+      <ul className="grid md:grid-cols-2 lg:grid-cols-3 w-full gap-[36px]">
         {projects.map((project, index) => (
-          <li className="flex flex-col w-[48%] lg:w-[calc(33%-30px)] gap-4 bg-gray-800 justify-between pb-4"
+          <li className="flex flex-col gap-4 bg-gray-800 justify-between pb-4"
             key={`project-${index}`}
           >
             <img
