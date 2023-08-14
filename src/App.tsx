@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       {isLoading && <Loader />}
-      <main className="text-gray-400 bg-gray-900 flex flex-col gap-40">
+      <main className="text-gray-400 bg-gray-900 flex flex-col gap-10 md:gap-20 lg:gap-40 pb-20 w-screen overflow-hidden">
         <Navbar />
         <Hero />
         <About />

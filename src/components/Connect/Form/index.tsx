@@ -4,7 +4,7 @@ import InputBox from "./InputBox";
 export default function Form() {
   const inputs = ["Enter your name", "Your email address", "Subject"];
   return (
-    <div className="flex flex-grow flex-col gap-8 bg-gray-800 rounded-3xl p-12">
+    <div className="flex flex-grow flex-col gap-8 bg-gray-800 rounded-xl md:rounded-3xl w-full p-5 md:p-12">
       {inputs.map((input, index) => (
         <InputBox key={index} label={input} />
       ))}

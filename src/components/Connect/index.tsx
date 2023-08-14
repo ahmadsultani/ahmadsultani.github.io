@@ -12,13 +12,13 @@ import Form from "./Form";
 function Connect() {
   return (
     <Section id="connect">
-      <div className="flex items-start w-full justify-between gap-20 pb-20">
+      <div className="flex flex-col lg:flex-row items-start w-full justify-between gap-10 md:gap-20">
         <MdOutlineConnectWithoutContact
           size={240}
-          className="absolute opacity-10 -ml-24 -mt-16"
+          className="hidden md:block absolute opacity-10 -ml-24 -mt-16"
         />
-        <div className="flex flex-col w-2/5 gap-6">
-          <h1 className="text-[26px] sm:text-5xl font-medium title-font text-white">
+        <div className="flex flex-col md:w-2/5 gap-2 md:gap-6">
+          <h1 className="text-[26px] md:text-4xl sm:text-5xl font-medium title-font text-white">
             Reach Me
           </h1>
           <p className="text-sm sm:text-md leading-relaxed text-justify">
@@ -29,7 +29,7 @@ function Connect() {
             </span>
             . Thanks!
           </p>
-          <div className="flex flex-row justify-start gap-6">
+          <div className="flex flex-row justify-start gap-6 mt-2">
             <a
               href="https://www.linkedin.com/in/ahmadsultanid/"
               target="_blank"

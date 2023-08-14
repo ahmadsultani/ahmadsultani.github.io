@@ -18,4 +18,8 @@
     box-sizing: border-box;
     scrollbar-width: none;
   }
+
+  body {
+    @apply w-screen
+  }
 }

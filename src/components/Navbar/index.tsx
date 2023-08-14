@@ -7,7 +7,7 @@ function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const navMenuClass = classNames(
-    "nav-mobile nav-content z-50 flex justify-end max-h-0 w-full lg:hidden transition-all duration-700 ease-in-out overflow-hidden",
+    "nav-mobile nav-content z-50 w-screen flex justify-end max-h-0 w-full lg:hidden transition-all duration-700 ease-in-out overflow-hidden",
     {
       "bg-gray-800 max-h-[192px]": isNavOpen,
     }
@@ -35,7 +35,7 @@ function Navbar() {
   return (
     <nav
       id="navbar"
-      className="fixed top-0 z-10 w-full items-center justify-between font-medium "
+      className="fixed top-0 z-10 w-screen items-center justify-between font-medium "
     >
       <div className="w-full flex flex-wrap bg-gray-800 px-10 xl:px-20 py-4 sm:py-3">
         <div className="lg:w-1/2 w-full items-center flex justify-between">
