@@ -40,7 +40,7 @@ export default function Headline() {
   }, [headline, isTyping, counter, texts, text, isInitialRender]);
 
   return (
-    <h1 className="title-font font-semibold text-[40px] lg:text-6xl text-transparent headline">
+    <h1 className="title-font font-semibold text-[36px] lg:text-6xl text-transparent headline">
       {headline}
     </h1>
   );

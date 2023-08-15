@@ -40,7 +40,7 @@ export default function Hero() {
         </div>
       </div>
       <img
-        className="flex img-profile object-center w-[240px] lg:w-[320px] h-fit rounded-full"
+        className="flex img-profile object-center w-[220px] lg:w-[320px] h-fit rounded-full"
         src={profile}
         alt="profile"
       />

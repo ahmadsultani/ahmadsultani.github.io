@@ -41,7 +41,7 @@ function Skills() {
           See More <AiOutlineArrowRight size={16} />
         </a>
       </div>
-      <div className="flex flex-col md:flex-row w-full md:-mt-4 gap-16">
+      <div className="flex flex-col md:flex-row w-full mt-4 md:-mt-4 gap-x-16 gap-y-10">
         <SkillContainer title="Library / Frameworks" skills={frameworks} />
         <SkillContainer title="Languages" skills={languages} />
       </div>
