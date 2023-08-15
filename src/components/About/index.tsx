@@ -13,7 +13,7 @@ export default function About() {
           size={200}
           className="absolute hidden md:block opacity-10 -ml-20 -mt-16"
         />
-        <div className="flex flex-col mx-auto lg:mx-0 w-full sm:w-4/5 max-w-[500px] items-start gap-6">
+        <div className="flex flex-col mx-auto lg:mx-0 w-full sm:w-4/5 max-w-[450px] items-start gap-6">
           <h1 className="text-[26px] sm:text-5xl font-medium title-font text-white">
             About Me
           </h1>
@@ -26,19 +26,18 @@ export default function About() {
               individually. Made an impactful change to other people is what I
               strive to do. I'm looking for an opportunity to grow my career
             </p>
-            <span className="outline-btn flex items-center justify-center w-full gap-12 text-yellow-500 font-medium">
-              <span className="flex text-3xl md:text-5xl items-end gap-1">
-                <p>10</p>
-                <p className="text-[10px] text-gray-300 font-light">projects</p>
-              </span>
-              <span className="flex text-3xl md:text-5xl items-end gap-1">
+            <section className="flex  items-end justify-center w-full gap-16 text-yellow-500 font-medium">
+              <div className="flex flex-col text-3xl md:text-5xl gap-1">
+                <p>15+</p>
+                <p className="text-[10px] text-gray-300 font-light leading-none">projects</p>
+              </div>
+              <div className="flex flex-col text-3xl md:text-5xl gap-1">
                 <p>1.5+</p>
-                <p className="text-[10px] text-gray-300 font-light h-fit">
-                  years in
-                  front-end
+                <p className="text-[10px] text-gray-300 font-light leading-none">
+                  years in front-end
                 </p>
-              </span>
-            </span>
+              </div>
+            </section>
           </div>
         </div>
         <div className="flex flex-col md:py-6 gap-2 mx-auto w-full tracking-wider max-w-[600px]">
