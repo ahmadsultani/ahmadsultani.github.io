@@ -40,7 +40,7 @@ export default function About() {
             </section>
           </div>
         </div>
-        <div className="flex flex-col md:py-6 gap-2 mx-auto w-full tracking-wider max-w-[600px]">
+        <div className="flex flex-col md:py-6 gap-2 mx-auto w-full tracking-wider max-w-[460px] lg:max-w-[600px]">
           <div className="flex gap-4 text-gray-200 text-xl md:text-3xl items-center">
             <div className="rounded-full bg-gray-800 p-3 md:p-5">
               <FaNetworkWired className="w-6 h-6 md:h-10 md:w-10" />
