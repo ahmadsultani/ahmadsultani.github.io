@@ -1,258 +1,233 @@
-import { useParams, Link } from "react-router-dom";
-import { projects } from "../data";
+import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
-  HiArrowUpRight,
-  HiArrowLeft,
-  HiSparkles,
-  HiCodeBracket,
-  HiTag,
+	HiArrowLeft,
+	HiArrowUpRight,
+	HiCodeBracket,
+	HiTag,
 } from "react-icons/hi2";
+import { projects } from "../data";
 
-const easing = [0.22, 1, 0.36, 1];
+const easing = [0.22, 1, 0.36, 1] as const;
 
 const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: easing },
-  },
+	hidden: { opacity: 0, y: 16 },
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: { duration: 0.45, ease: easing },
+	},
 };
 
 export default function ProjectDetail() {
-  const { slug } = useParams();
+	const { slug } = useParams();
+	const project = projects.find((item) => item.slug === slug);
 
-  const proj = projects.find((p) => p.slug === slug);
+	if (!project) {
+		return (
+			<div className="grid min-h-screen place-items-center px-6">
+				<div className="app-panel max-w-md rounded-2xl border border-slate-700/80 p-8 text-center">
+					<h1 className="text-3xl font-semibold tracking-[-0.02em] text-slate-100">
+						Project not found
+					</h1>
+					<p className="mt-3 text-sm leading-relaxed text-slate-400">
+						The requested project could not be found. Please verify the URL.
+					</p>
+					<Link
+						to="/"
+						className="mt-6 inline-flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-900/80 px-4 py-2 text-sm font-medium text-slate-100 transition-colors hover:border-slate-500 hover:bg-slate-800/90"
+					>
+						<HiArrowLeft size={16} />
+						Back to Home
+					</Link>
+				</div>
+			</div>
+		);
+	}
 
-  if (!proj) {
-    return (
-      <div className="min-h-screen bg-primary-bg flex items-center justify-center px-6">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          className="text-center"
-        >
-          <h1 className="text-3xl md:text-4xl text-white font-bold mb-4">
-            Project not found
-          </h1>
-          <p className="text-slate-300/80 mb-8">
-            The project you're looking for doesn't exist.
-          </p>
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-gradient-to-r from-white/[0.08] to-white/[0.04] px-6 py-3 text-sm font-medium text-white hover:border-cyan-400/30 hover:from-cyan-400/10 hover:to-blue-400/5 transition-all backdrop-blur-sm"
-          >
-            <HiArrowLeft size={16} />
-            Back home
-          </Link>
-        </motion.div>
-      </div>
-    );
-  }
+	return (
+		<div className="pb-20">
+			<motion.section
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 0.55 }}
+				className="relative h-[42vh] min-h-[280px] overflow-hidden md:h-[50vh]"
+			>
+				{project.image ? (
+					<img
+						src={project.image}
+						alt={project.title}
+						className="absolute inset-0 h-full w-full object-cover object-top"
+					/>
+				) : null}
 
-  return (
-    <div className="min-h-screen bg-primary-bg">
-      {/* Hero Section */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative h-[50vh] md:h-[60vh] overflow-hidden"
-      >
-        {proj.image && (
-          <>
-            <img
-              src={proj.image}
-              alt={proj.title}
-              className="absolute inset-0 w-full h-full object-cover object-top"
-            />
-            {/* Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-b from-primary-bg/20 via-primary-bg/60 to-primary-bg" />
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-bg/40 to-transparent" />
+				<div className="absolute inset-0 bg-gradient-to-t from-[#0b0f16] via-[#0b0f16]/75 to-[#0b0f16]/30" />
+				<div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-300/35 to-transparent" />
 
-            {/* Animated accents */}
-            <div className="absolute top-0 left-0 w-32 h-32">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400/80 to-transparent"></div>
-              <div className="absolute top-0 left-0 h-full w-1 bg-gradient-to-b from-cyan-400/80 to-transparent"></div>
-            </div>
-          </>
-        )}
+				<div className="absolute inset-x-0 bottom-0 mx-auto w-full max-w-6xl px-5 pb-10 sm:px-8 lg:px-12">
+					<div className="space-y-3">
+						<div className="text-xs uppercase tracking-[0.14em] text-slate-300">
+							<Link to="/" className="hover:text-slate-100">
+								Home
+							</Link>
+							<span className="mx-2 text-slate-500">/</span>
+							<Link to="/#projects" className="hover:text-slate-100">
+								Projects
+							</Link>
+						</div>
 
-        {/* Title & Breadcrumb */}
-        <div className="absolute inset-0 flex items-end">
-          <div className="w-full max-w-7xl mx-auto px-6 md:px-8 pb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: easing }}
-            >
-              {/* Breadcrumb */}
-              <div className="flex items-center gap-2 mb-4 text-sm text-slate-300/80">
-                <Link to="/" className="hover:text-cyan-400 transition-colors">
-                  Home
-                </Link>
-                <span>/</span>
-                <span className="text-cyan-400">Projects</span>
-                <span>/</span>
-                <span>{proj.title}</span>
-              </div>
+						<p className="section-eyebrow">Project</p>
 
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-                {proj.title}
-              </h1>
-              <p className="text-lg md:text-xl text-slate-200/90 max-w-3xl">
-                {proj.description}
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </motion.div>
+						<h1 className="max-w-4xl text-3xl font-semibold leading-tight tracking-[-0.02em] text-slate-100 md:text-5xl">
+							{project.title}
+						</h1>
 
-      {/* Content */}
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-12 md:py-16">
-        {/* Actions */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          transition={{ delay: 0.3 }}
-          className="flex flex-wrap items-center gap-4 mb-12"
-        >
-          {proj.href && (
-            <a
-              href={proj.href}
-              target="_blank"
-              rel="noreferrer"
-              className="group inline-flex items-center gap-2 rounded-xl border border-white/20 bg-gradient-to-r from-cyan-400/10 to-blue-400/5 px-6 py-3 text-sm font-medium text-white hover:border-cyan-400/40 hover:from-cyan-400/20 hover:to-blue-400/10 transition-all backdrop-blur-sm"
-            >
-              View Project
-              <HiArrowUpRight
-                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                size={16}
-              />
-            </a>
-          )}
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-gradient-to-r from-white/[0.08] to-white/[0.04] px-6 py-3 text-sm font-medium text-white hover:border-white/30 hover:from-white/[0.12] hover:to-white/[0.06] transition-all backdrop-blur-sm"
-          >
-            <HiArrowLeft size={16} />
-            Back to Projects
-          </Link>
-        </motion.div>
+						<p className="max-w-3xl text-sm leading-relaxed text-slate-300 md:text-base">
+							{project.description}
+						</p>
+					</div>
+				</div>
+			</motion.section>
 
-        <div className="grid lg:grid-cols-3 gap-8 md:gap-12">
-          {/* Main Content */}
-          <div className="lg:col-span-2 space-y-12">
-            {/* Story Section */}
-            {proj.story && (
-              <motion.section
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={fadeIn}
-              >
-                <div className="inline-flex items-center gap-3 mb-6">
-                  <HiSparkles className="text-cyan-400" size={20} />
-                  <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
-                    Project Story
-                  </h2>
-                </div>
+			<div className="mx-auto mt-8 w-full max-w-6xl space-y-8 px-5 sm:px-8 lg:px-12">
+				<motion.div
+					initial="hidden"
+					animate="visible"
+					variants={fadeIn}
+					className="flex flex-wrap items-center gap-2.5 border-y border-slate-800/90 py-4"
+				>
+					{project.href ? (
+						<motion.a
+							href={project.href}
+							target="_blank"
+							rel="noreferrer"
+							whileHover={{ y: -2 }}
+							transition={{ duration: 0.2, ease: easing }}
+							className="inline-flex items-center gap-2 rounded-lg border border-slate-500 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition-colors hover:bg-white"
+						>
+							Open Live Project
+							<HiArrowUpRight size={15} />
+						</motion.a>
+					) : null}
 
-                <div dangerouslySetInnerHTML={{ __html: proj.story }} />
-              </motion.section>
-            )}
+					<motion.div
+						whileHover={{ y: -2 }}
+						transition={{ duration: 0.2, ease: easing }}
+					>
+						<Link
+							to="/#projects"
+							className="inline-flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-900/75 px-4 py-2 text-sm font-medium text-slate-100 transition-colors hover:border-slate-500 hover:bg-slate-800/85"
+						>
+							<HiArrowLeft size={15} />
+							Return to Projects
+						</Link>
+					</motion.div>
+				</motion.div>
 
-            {/* Gallery Section - Placeholder */}
-            <motion.section
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={fadeIn}
-            >
-              <div className="inline-flex items-center gap-3 mb-6">
-                <HiSparkles className="text-cyan-400" size={20} />
-                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
-                  Gallery
-                </h2>
-              </div>
+				<div className="grid gap-6 lg:grid-cols-3">
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, amount: 0.12 }}
+						variants={fadeIn}
+						className="space-y-6 lg:col-span-2"
+					>
+						<section className="app-panel rounded-2xl border border-slate-700/80 p-6 md:p-7">
+							{project.story ? (
+								<>
+									<h2 className="text-2xl font-semibold text-slate-100">
+										Project Overview
+									</h2>
+									<div
+										className="project-story mt-4 text-sm md:text-base"
+										dangerouslySetInnerHTML={{ __html: project.story }}
+									/>
+								</>
+							) : (
+								<p className="text-sm text-slate-400">
+									Project details will be added soon.
+								</p>
+							)}
 
-              <div className="rounded-xl border border-white/10 bg-white/[0.02] p-12 text-center">
-                <p className="text-slate-400">Gallery coming soon...</p>
-              </div>
-            </motion.section>
-          </div>
+							<div className="mt-8 border-t border-slate-800/90 pt-6">
+								<h3 className="text-lg font-semibold text-slate-100">
+									Implementation Notes
+								</h3>
+								<p className="mt-3 text-sm leading-relaxed text-slate-400">
+									Additional implementation details and architecture notes will
+									be published soon.
+								</p>
+							</div>
+						</section>
+					</motion.div>
 
-          {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Stack */}
-            {proj.stack?.length ? (
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeIn}
-                className="rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6"
-              >
-                <div className="flex items-center gap-2 mb-4">
-                  <HiCodeBracket className="text-cyan-400" size={20} />
-                  <h3 className="text-lg font-semibold text-white">
-                    Tech Stack
-                  </h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {proj.stack.map((tech, idx) => (
-                    <motion.span
-                      key={tech}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: idx * 0.05, duration: 0.3 }}
-                      className="group/tech relative inline-flex items-center"
-                    >
-                      <span className="absolute -inset-[1px] rounded-lg bg-gradient-to-r from-cyan-400/30 via-blue-400/30 to-indigo-400/30 blur-sm opacity-0 group-hover/tech:opacity-100 transition-opacity" />
-                      <span className="relative rounded-lg border border-white/20 bg-white/[0.05] px-3 py-2 text-sm font-medium text-slate-200 hover:bg-white/[0.12] hover:border-cyan-400/40 hover:text-cyan-300 transition-all">
-                        {tech}
-                      </span>
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            ) : null}
+					<motion.aside
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true }}
+						variants={fadeIn}
+						className="app-panel space-y-6 rounded-2xl border border-slate-700/80 p-6 lg:sticky lg:top-24 lg:self-start"
+					>
+						{project.stack?.length ? (
+							<div>
+								<div className="mb-3 flex items-center gap-2">
+									<HiCodeBracket size={18} className="text-slate-300" />
+									<h3 className="text-lg font-semibold text-slate-100">
+										Tech Stack
+									</h3>
+								</div>
+								<div className="flex flex-wrap gap-2">
+									{project.stack.map((tech) => (
+										<motion.span
+											key={tech}
+											whileHover={{ y: -1 }}
+											transition={{ duration: 0.15 }}
+											className="rounded-md border border-slate-700 bg-slate-900/70 px-2.5 py-1 text-xs text-slate-300"
+										>
+											{tech}
+										</motion.span>
+									))}
+								</div>
+							</div>
+						) : null}
 
-            {/* Tags */}
-            {proj.tags?.length ? (
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeIn}
-                transition={{ delay: 0.1 }}
-                className="rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6"
-              >
-                <div className="flex items-center gap-2 mb-4">
-                  <HiTag className="text-cyan-400" size={20} />
-                  <h3 className="text-lg font-semibold text-white">Tags</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {proj.tags.map((tag, idx) => (
-                    <motion.span
-                      key={tag}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: idx * 0.05, duration: 0.3 }}
-                      className="rounded-lg border border-white/20 bg-white/[0.05] px-3 py-1.5 text-sm text-slate-300 hover:bg-white/[0.1] hover:border-white/30 transition-all"
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            ) : null}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+						{project.tags?.length ? (
+							<div className="border-t border-slate-800/90 pt-5">
+								<div className="mb-3 flex items-center gap-2">
+									<HiTag size={18} className="text-slate-300" />
+									<h3 className="text-lg font-semibold text-slate-100">Tags</h3>
+								</div>
+								<div className="flex flex-wrap gap-2">
+									{project.tags.map((tag) => (
+										<motion.span
+											key={tag}
+											whileHover={{ y: -1 }}
+											transition={{ duration: 0.15 }}
+											className="rounded-md border border-slate-700 bg-slate-900/70 px-2.5 py-1 text-xs text-slate-300"
+										>
+											{tag}
+										</motion.span>
+									))}
+								</div>
+							</div>
+						) : null}
+
+						{project.href ? (
+							<div className="border-t border-slate-800/90 pt-5">
+								<a
+									href={project.href}
+									target="_blank"
+									rel="noreferrer"
+									className="inline-flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-900/70 px-3.5 py-2 text-sm text-slate-200 transition-colors hover:border-slate-500 hover:text-slate-100"
+								>
+									Open Live Project
+									<HiArrowUpRight size={14} />
+								</a>
+							</div>
+						) : null}
+					</motion.aside>
+				</div>
+			</div>
+		</div>
+	);
 }

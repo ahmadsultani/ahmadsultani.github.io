@@ -1,27 +1,122 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
-@layer components {
-  section {
-    @apply scroll-mt-28;
+:root {
+  --bg: 11 15 22;
+  --bg-soft: 16 22 33;
+  --surface: 20 27 40;
+  --border: 46 57 76;
+  --text: 231 236 245;
+  --text-muted: 156 169 191;
+  --accent: 134 172 255;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 
-  ::-webkit-scrollbar {
-    display: none;
+  html {
+    scroll-behavior: smooth;
+    background: rgb(var(--bg));
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: rgb(var(--text));
+    background:
+      radial-gradient(1000px 500px at 85% -10%, rgba(134, 172, 255, 0.16), transparent 60%),
+      radial-gradient(700px 420px at -10% 10%, rgba(92, 119, 171, 0.18), transparent 55%),
+      rgb(var(--bg));
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  section {
+    scroll-margin-top: 6rem;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+
+  ::selection {
+    color: rgb(9 13 19);
+    background: rgba(156, 190, 255, 0.85);
   }
 
   * {
-    @apply scroll-smooth select-none;
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
-    scrollbar-width: none;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(156, 169, 191, 0.5) transparent;
   }
 
-  html,
-  body {
-    @apply w-screen;
-    background-color: #070d16;
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: rgba(156, 169, 191, 0.4);
+    border-radius: 999px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: rgba(190, 202, 221, 0.55);
+  }
+}
+
+@layer components {
+  .app-panel {
+    background: rgba(20, 27, 40, 0.78);
+    border: 1px solid rgba(46, 57, 76, 0.9);
+    backdrop-filter: blur(6px);
+  }
+
+  .section-eyebrow {
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(156, 169, 191, 0.9);
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: rgb(var(--text));
+  }
+
+  .section-copy {
+    max-width: 42rem;
+    color: rgba(156, 169, 191, 0.95);
+    line-height: 1.7;
+  }
+
+  .project-story p {
+    margin: 0 0 1rem;
+    line-height: 1.8;
+    color: rgba(203, 212, 227, 0.95);
+  }
+
+  .project-story b,
+  .project-story strong {
+    color: rgb(var(--text));
+    font-weight: 700;
   }
 }

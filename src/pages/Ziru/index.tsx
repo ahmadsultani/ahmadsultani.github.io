@@ -2,18 +2,15 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiTryhackme, SiWritedotas } from "react-icons/si";
 
-// Placeholder data - replace with your actual content
 const WRITEUPS = [
   {
     id: 1,
-    title: "Gemastik XVIII Final (Attack Defense)",
+    title: "Gemastik XVIII Final (Attack-Defense)",
     platform: "Gemastik XVIII",
     category: "Web Exploitation",
     link: "https://docs.google.com/document/d/1nLLJ-mlBQyQCCoJohhorfmZ_k4U38Z4QMzNGAsQsDK8/edit?usp=drive_link",
-    description: `
-      We achieved 2nd Place on Scoreboard. In this competition, we blooded and exploited multiple web vulnerabilities 
-      including Server-Side Template Injection (SSTI), Command Injection, and SQL Injection 
-    `,
+    description:
+      "Secured 2nd place by exploiting critical vulnerabilities including SSTI, command injection, and SQL injection under live attack-defense conditions.",
   },
   {
     id: 2,
@@ -21,34 +18,26 @@ const WRITEUPS = [
     platform: "CTFd",
     category: "Reverse Engineering, Forensics, Web Exploitation, Cryptography",
     link: "https://docs.google.com/document/d/1OncakXPl54cOtHpIyhBB2zUuYeSZ7c94vUxfDbRg8GA/edit?usp=drive_link",
-    description: `
-     We secured 1st Place in this CTF competition. This event challenged us with various highlighted challenge in this
-     CTF is the great Forensics and Reverse Engineering challenges that require deep analysis.
-    `,
+    description:
+      "Achieved 1st place with strong performance across forensics and reverse engineering challenges requiring deep binary and artifact analysis.",
   },
   {
     id: 3,
     title: "Intechfest 2025",
     platform: "CTFd",
-    category:
-      "Web Exploitation, Forensics, Cryptography, Reverse Engineering",
+    category: "Web Exploitation, Forensics, Cryptography, Reverse Engineering",
     link: "https://docs.google.com/document/d/1MPjItUAetRLnIKgX4WS4WAtWcB6qCaI9y89KIxTsTwE/edit?usp=drive_link",
-    description: `
-      We secured 3rd place on the scoreboard. In this CTF, we solved various challenges,
-      including Web Exploitation, Forensics, Cryptography, and Reverse Engineering.
-    `,
+    description:
+      "Finished in 3rd place after solving a broad challenge set spanning web exploitation, forensics, cryptography, and reverse engineering.",
   },
   {
     id: 4,
     title: "Schematics 2025 Qualifier",
     platform: "CTFd",
-    category:
-      "Web Exploitation, Forensics, Cryptography, Reverse Engineering, Misc",
+    category: "Web Exploitation, Forensics, Cryptography, Reverse Engineering, Misc",
     link: "https://docs.google.com/document/d/1I8NooJs2TAUkblW3o4GaNB8Aas1WRQeasTa7lrN40aA/edit?usp=drive_link",
-    description: `
-      We secured our place to final round. In this CTF, we fully clear the Web Exploitation,
-      Forensics, Cryptograpy, and Misc challenges.
-    `,
+    description:
+      "Qualified for the final round with full clears in key categories, including web exploitation, forensics, cryptography, and miscellaneous tracks.",
   },
 ];
 
@@ -75,7 +64,7 @@ const SKILLS = [
     ],
   },
   {
-    category: "Tools",
+    category: "Tooling",
     items: ["Burp Suite", "Metasploit", "Wireshark", "Nmap", "Python", "GDB"],
   },
 ];
@@ -84,258 +73,217 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1 },
+    transition: { staggerChildren: 0.08 },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 14 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.35 } },
 };
+
+const year = new Date().getFullYear();
 
 export default function Ziru() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#070d16] via-[#0a1220] to-[#070d16] text-gray-300">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <div className="mb-6">
-              <span className="inline-block px-4 py-1.5 bg-cyan-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-mono mb-4">
-                Offensive Security
+    <div className="min-h-screen px-5 pb-14 sm:px-8 lg:px-12">
+      <section className="grid min-h-screen place-items-center py-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="app-panel w-full max-w-6xl rounded-2xl p-7 sm:p-10 md:p-12"
+        >
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <span className="inline-flex items-center rounded-full border border-slate-600/80 bg-slate-900/70 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-slate-300">
+                Offensive Security Profile
               </span>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
-              ziru
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl mx-auto">
-              Cybersecurity enthusiast specializing in{" "}
-              <span className="text-cyan-400 font-semibold">
-                Web Exploitation
-              </span>{" "}
-              and{" "}
-              <span className="text-blue-400 font-semibold">
-                Reverse Engineering
-              </span>
-            </p>
 
-            {/* Social Links */}
-            <div className="flex justify-center gap-4 mb-12">
-              <a
-                href="https://www.linkedin.com/in/ahmadsultanid/"
-                className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all duration-300 hover:border-cyan-400/50"
-                aria-label="GitHub"
-              >
-                <FaGithub className="w-6 h-6" />
-              </a>
-              <a
-                href="https://tryhackme.com/p/ziru"
-                className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all duration-300 hover:border-cyan-400/50"
-                aria-label="TryHackMe"
-              >
-                <SiTryhackme className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ahmadsultanid/"
-                className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-all duration-300 hover:border-cyan-400/50"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin className="w-6 h-6" />
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+              <h1 className="mt-5 text-5xl font-semibold tracking-[-0.03em] text-slate-100 md:text-7xl">
+                ziru
+              </h1>
 
-      {/* About Section */}
-      <section className="py-20 px-4 sm:px-6 border-t border-white/10">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">
-              About Me
-            </h2>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
-              <p className="text-lg text-gray-400 leading-relaxed mb-6">
-                I'm a CTF player with a deep passion for breaking things to
-                understand how they work. My journey into cybersecurity began
-                alongside my software engineering career, where I discovered
-                that building secure applications required thinking like an
-                attacker. This dual perspective—as both a developer and a CTF
-                Player—gives me unique insights into finding and exploiting
-                vulnerabilities.
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
+                Security enthusiast focused on web exploitation and reverse
+                engineering. I approach security with a builder&apos;s mindset and
+                specialize in finding practical weaknesses in real systems.
               </p>
-              <p className="text-lg text-gray-400 leading-relaxed mb-6">
-                I specialize in{" "}
-                <span className="text-cyan-400 font-semibold">
-                  web exploitation
-                </span>
-                , hunting for injection flaws, authentication bypasses, and
-                logic vulnerabilities in web applications. Whether it's crafting
-                the perfect SQL injection payload or chaining XSS with CSRF for
-                maximum impact, I love the creativity that web exploitation
-                demands. On the{" "}
-                <span className="text-blue-400 font-semibold">
-                  reverse engineering
-                </span>{" "}
-                side, I enjoy diving into binaries with tools like Ghidra and
-                IDA Pro, uncovering hidden logic, and understanding low-level
-                program behavior.
+
+              <div className="mt-7 flex flex-wrap gap-2.5">
+                <a
+                  href="https://github.com/arctanziru"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                  className="inline-flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-900/75 px-3.5 py-2 text-sm text-slate-200 transition-colors hover:border-slate-500 hover:bg-slate-800/90"
+                >
+                  <FaGithub className="h-5 w-5" />
+                  GitHub
+                </a>
+                <a
+                  href="https://tryhackme.com/p/ziru"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="TryHackMe"
+                  className="inline-flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-900/75 px-3.5 py-2 text-sm text-slate-200 transition-colors hover:border-slate-500 hover:bg-slate-800/90"
+                >
+                  <SiTryhackme className="h-5 w-5" />
+                  TryHackMe
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ahmadsultanid/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  className="inline-flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-900/75 px-3.5 py-2 text-sm text-slate-200 transition-colors hover:border-slate-500 hover:bg-slate-800/90"
+                >
+                  <FaLinkedin className="h-5 w-5" />
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-slate-700/80 bg-slate-900/70 p-5 md:p-6">
+              <p className="text-xs uppercase tracking-[0.14em] text-slate-400">
+                Focus Areas
               </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section className="py-20 px-4 sm:px-6 border-t border-white/10">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">
-              Skills & Expertise
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {SKILLS.map((skill, idx) => (
-                <motion.div
-                  key={skill.category}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
-                >
-                  <h3 className="text-xl font-semibold mb-4 text-cyan-400">
-                    {skill.category}
-                  </h3>
-                  <ul className="space-y-2">
-                    {skill.items.map((item) => (
-                      <li
-                        key={item}
-                        className="text-gray-400 flex items-center"
-                      >
-                        <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full mr-3"></span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Writeups Section */}
-      <section className="py-20 px-4 sm:px-6 border-t border-white/10">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-              CTF Writeups
-            </h2>
-
-            <div className="space-y-4">
-              {WRITEUPS.map((writeup) => (
-                <motion.a
-                  key={writeup.id}
-                  href={writeup.link}
-                  variants={itemVariants}
-                  className="block bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm hover:bg-white/10 hover:border-cyan-400/30 transition-all duration-300 group"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl font-semibold text-white group-hover:text-cyan-400 transition-colors">
-                          {writeup.title}
-                        </h3>
-                      </div>
-                      <p className="text-gray-400 text-sm mb-3">
-                        {writeup.description}
-                      </p>
-                      <div className="flex flex-wrap items-center gap-3 text-sm">
-                        <span className="text-cyan-400 font-mono">
-                          {writeup.platform}
-                        </span>
-                        <span className="text-gray-600">•</span>
-                        <span className="text-blue-400">
-                          {writeup.category}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="text-cyan-400 group-hover:translate-x-2 transition-transform">
-                      <SiWritedotas className="w-6 h-6" />
-                    </div>
+              <div className="mt-4 space-y-3">
+                {[
+                  "Web Exploitation",
+                  "Reverse Engineering",
+                  "Forensics Analysis",
+                  "CTF Team Competition",
+                ].map((focus) => (
+                  <div
+                    key={focus}
+                    className="rounded-lg border border-slate-700/80 bg-slate-900/80 px-3 py-2.5 text-sm text-slate-300"
+                  >
+                    {focus}
                   </div>
-                </motion.a>
-              ))}
+                ))}
+              </div>
             </div>
+          </div>
+        </motion.div>
+      </section>
 
-            {/* Placeholder for more writeups */}
+      <section className="mx-auto max-w-6xl space-y-6 pb-12">
+        <div className="space-y-3">
+          <p className="section-eyebrow">About</p>
+          <h2 className="section-title">Security through an attacker-focused lens.</h2>
+          <p className="section-copy">
+            My security path developed alongside software engineering, giving me
+            perspective from both offensive and defensive sides. I focus on
+            identifying exploitable patterns, validating impact, and translating
+            findings into clear remediation guidance.
+          </p>
+        </div>
+
+        <div className="app-panel rounded-2xl p-6 md:p-7">
+          <p className="text-sm leading-relaxed text-slate-300 md:text-base">
+            I work across web exploitation and reverse engineering, with hands-on
+            experience in attack chains involving injection flaws, access-control
+            weaknesses, and logic issues. I also perform binary-level analysis
+            using industry tools to recover hidden logic and understand program
+            behavior at runtime.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl space-y-6 border-t border-slate-800/80 py-12">
+        <div className="space-y-3">
+          <p className="section-eyebrow">Capabilities</p>
+          <h2 className="section-title">Technical Disciplines</h2>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {SKILLS.map((skill, idx) => (
             <motion.div
-              variants={itemVariants}
-              className="mt-8 text-center p-12 bg-white/5 border border-dashed border-white/20 rounded-xl"
+              key={skill.category}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.06 }}
+              className="app-panel rounded-xl p-5"
             >
-              <SiWritedotas className="w-12 h-12 mx-auto mb-4 text-gray-600" />
-              <p className="text-gray-500 text-lg">
-                More writeups coming soon...
-              </p>
-              <p className="text-gray-600 text-sm mt-2">
-                Add your writeup links in the WRITEUPS array
-              </p>
+              <h3 className="text-lg font-semibold text-slate-100">{skill.category}</h3>
+              <ul className="mt-3 space-y-2 text-sm text-slate-300">
+                {skill.items.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
-          </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20 px-4 sm:px-6 border-t border-white/10">
-        <div className="max-w-5xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              Let's Connect
-            </h2>
-            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-              Interested in collaboration, CTF teams, or just want to discuss
-              security research? Feel free to reach out!
-            </p>
-            <a
-              href="mailto:your.email@example.com"
-              className="inline-block px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 hover:scale-105"
+      <section className="mx-auto max-w-6xl space-y-6 border-t border-slate-800/80 py-12">
+        <div className="space-y-3">
+          <p className="section-eyebrow">Writeups</p>
+          <h2 className="section-title">CTF Notes and Analyses</h2>
+        </div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="space-y-4"
+        >
+          {WRITEUPS.map((writeup) => (
+            <motion.a
+              key={writeup.id}
+              href={writeup.link}
+              target="_blank"
+              rel="noreferrer"
+              variants={itemVariants}
+              className="app-panel group block rounded-xl p-5 transition-colors hover:bg-slate-900/90"
             >
-              Get in Touch
-            </a>
-          </motion.div>
+              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-slate-100 md:text-xl">
+                    {writeup.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                    {writeup.description}
+                  </p>
+                  <div className="mt-3 flex flex-wrap items-center gap-2.5 text-xs uppercase tracking-[0.08em] text-slate-400 md:text-sm">
+                    <span>{writeup.platform}</span>
+                    <span className="text-slate-600">•</span>
+                    <span>{writeup.category}</span>
+                  </div>
+                </div>
+                <SiWritedotas className="h-6 w-6 shrink-0 text-slate-300 transition-transform group-hover:translate-x-1" />
+              </div>
+            </motion.a>
+          ))}
+        </motion.div>
+      </section>
+
+      <section className="mx-auto max-w-6xl border-t border-slate-800/80 py-12">
+        <div className="app-panel rounded-2xl p-7 text-center md:p-9">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-100 md:text-4xl">
+            Open to Collaboration
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-300 md:text-base">
+            Available for CTF collaboration, security research discussions, and
+            technical exchange on exploitation and analysis workflows.
+          </p>
+          <a
+            href="mailto:ahmadsultanidayanullah@gmail.com"
+            className="mt-6 inline-flex rounded-lg border border-slate-500 bg-slate-100 px-6 py-2.5 text-sm font-semibold text-slate-900 transition-colors hover:bg-white"
+          >
+            Contact by Email
+          </a>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 px-4 border-t border-white/10">
-        <div className="max-w-5xl mx-auto text-center text-gray-600 text-sm">
-          <p>© 2025 ziru. All rights reserved.</p>
-        </div>
+      <footer className="border-t border-slate-800/80 py-7 text-center text-sm text-slate-500">
+        © {year} ziru. All rights reserved.
       </footer>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { LazyMotion, domAnimation, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 type FormState = {
   name: string;
@@ -22,162 +22,124 @@ export default function Form() {
   const fields = useMemo(
     () =>
       [
-        { key: "name", label: "Your name", type: "text", autoComplete: "name" },
-        {
-          key: "email",
-          label: "Email address",
-          type: "email",
-          autoComplete: "email",
-        },
+        { key: "name", label: "Full Name", type: "text", autoComplete: "name" },
+        { key: "email", label: "Email", type: "email", autoComplete: "email" },
         { key: "subject", label: "Subject", type: "text", autoComplete: "off" },
       ] as const,
     []
   );
 
-  function validate(d: FormState) {
-    const e: Partial<FormState> = {};
-    if (!d.name.trim()) e.name = "Please tell me your name.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email))
-      e.email = "Use a valid email.";
-    if (!d.subject.trim()) e.subject = "Add a subject.";
-    if (d.message.trim().length < 10)
-      e.message = "Say a bit more (≥ 10 chars).";
-    return e;
+  function validate(payload: FormState) {
+    const next: Partial<FormState> = {};
+    if (!payload.name.trim()) next.name = "Please provide your name.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
+      next.email = "Please provide a valid email address.";
+    }
+    if (!payload.subject.trim()) next.subject = "Please add a subject.";
+    if (payload.message.trim().length < 10) {
+      next.message = "Please share more detail (minimum 10 characters).";
+    }
+    return next;
   }
 
-  function onSubmit(ev: React.FormEvent) {
-    ev.preventDefault();
-    const e = validate(data);
-    setErrors(e);
-    if (Object.keys(e).length) return;
+  function onSubmit(event: React.FormEvent) {
+    event.preventDefault();
+    const nextErrors = validate(data);
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length) return;
 
     const body = [
-      `Hi Ahmad,`,
-      ``,
+      "Hi Ahmad,",
+      "",
       data.message.trim(),
-      ``,
-      `— ${data.name}`,
+      "",
+      `- ${data.name}`,
       `(${data.email})`,
     ].join("\n");
-    const url = `mailto:${TO}?subject=${encodeURIComponent(
+
+    const mailto = `mailto:${TO}?subject=${encodeURIComponent(
       data.subject
     )}&body=${encodeURIComponent(body)}`;
-    window.location.href = url;
+    window.location.href = mailto;
   }
 
   return (
-    <LazyMotion features={domAnimation}>
-      <div className="relative group h-full">
-        {/* Glow effect */}
-        <motion.form
-          onSubmit={onSubmit}
-          className="relative flex flex-col gap-6 rounded-3xl border border-white/10 bg-primary-bg/80 backdrop-blur-xl p-6 md:p-8 h-full"
-        >
-
-        {/* Header */}
-        <div className="flex items-center gap-2 pb-2">
-          <span className="h-2 w-2 rounded-full bg-purple-400 animate-pulse"></span>
-          <h3 className="text-lg md:text-xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-indigo-500 bg-clip-text">
-            Send a Message
-          </h3>
-        </div>
-
-        {/* Inputs */}
-        <div className="relative grid gap-5 md:grid-cols-2">
-          {fields.map(({ key, label, type, autoComplete }) => (
-            <div key={key} className="flex flex-col gap-2">
-              <label htmlFor={key} className="text-sm font-medium text-slate-300/90">
-                {label}
-              </label>
-              <div className="relative group/input rounded-xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.06] transition-all">
-                <input
-                  id={key}
-                  type={type}
-                  autoComplete={autoComplete}
-                  placeholder={label}
-                  value={(data as any)[key]}
-                  onChange={(e) =>
-                    setData((s) => ({ ...s, [key]: e.target.value }))
-                  }
-                  className="w-full rounded-xl bg-transparent px-4 py-3 text-sm text-white placeholder:text-slate-400/60 outline-none"
-                  aria-invalid={!!(errors as any)[key]}
-                  aria-describedby={
-                    (errors as any)[key] ? `${key}-err` : undefined
-                  }
-                />
-                {/* gradient focus ring */}
-                <span className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-transparent focus-within:ring-2 focus-within:ring-cyan-400/50" />
-              </div>
-              {(errors as any)[key] && (
-                <p id={`${key}-err`} className="text-xs text-rose-300">
-                  {(errors as any)[key]}
-                </p>
-              )}
-            </div>
-          ))}
-
-          {/* Message (span both columns) */}
-          <div className="md:col-span-2 flex flex-col gap-2">
-            <label htmlFor="message" className="text-sm font-medium text-slate-300/90">
-              Write me a message
-            </label>
-            <div className="relative group/input rounded-xl border border-white/10 bg-white/[0.04] hover:bg-white/[0.06] transition-all">
-              <textarea
-                id="message"
-                rows={6}
-                placeholder="Project idea, role, timeline, links…"
-                value={data.message}
-                onChange={(e) =>
-                  setData((s) => ({ ...s, message: e.target.value }))
-                }
-                className="w-full resize-y rounded-xl bg-transparent px-4 py-3 text-sm text-white placeholder:text-slate-400/60 outline-none"
-                aria-invalid={!!errors.message}
-                aria-describedby={errors.message ? "message-err" : undefined}
-              />
-              <span className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-transparent focus-within:ring-2 focus-within:ring-cyan-400/50" />
-            </div>
-            {errors.message && (
-              <p id="message-err" className="text-xs text-rose-300">
-                {errors.message}
-              </p>
-            )}
-          </div>
-        </div>
-
-        {/* Actions */}
-        <div className="flex items-center justify-end gap-3 pt-2">
-          <button
-            type="button"
-            onClick={() =>
-              setData({ name: "", email: "", subject: "", message: "" })
-            }
-            className="rounded-xl border border-white/10 bg-white/[0.06] px-5 py-2.5 text-sm font-medium text-white hover:bg-white/[0.12] hover:border-white/20 transition-all"
-          >
-            Clear
-          </button>
-          <motion.button
-            type="submit"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="relative group/btn inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl border border-cyan-400/20 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-indigo-500/20 px-6 py-2.5 text-sm font-medium text-white shadow-lg shadow-cyan-500/10 hover:shadow-cyan-500/20 transition-all"
-          >
-            <span className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-400/0 via-cyan-400/20 to-cyan-400/0 translate-x-[-100%] group-hover/btn:animate-[shine_1.5s_ease-in-out]" />
-            <span className="relative">Send Message</span>
-            <svg className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </motion.button>
-        </div>
-
-        {/* keyframes once */}
-        <style>{`
-          @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-          }
-        `}</style>
-      </motion.form>
+    <motion.form
+      onSubmit={onSubmit}
+      className="flex h-full flex-col gap-5 rounded-lg border border-slate-600/90 bg-slate-900/45 p-6 md:p-7"
+    >
+      <div>
+        <h3 className="text-lg font-semibold text-slate-100 md:text-xl">Send a Message</h3>
+        <p className="mt-1 text-sm text-slate-400">
+          Share your project scope, timeline, and goals. I will reply by email.
+        </p>
       </div>
-    </LazyMotion>
+
+      <div className="grid gap-4 md:grid-cols-2">
+        {fields.map(({ key, label, type, autoComplete }) => (
+          <div key={key} className="flex flex-col gap-1.5">
+            <label htmlFor={key} className="text-xs uppercase tracking-[0.11em] text-slate-400">
+              {label}
+            </label>
+            <input
+              id={key}
+              type={type}
+              autoComplete={autoComplete}
+              value={(data as FormState)[key]}
+              onChange={(event) =>
+                setData((prev) => ({ ...prev, [key]: event.target.value }))
+              }
+              className="rounded-lg border border-slate-600 bg-transparent px-3 py-2.5 text-sm text-slate-100 outline-none transition-colors placeholder:text-slate-500 focus:border-slate-500"
+              aria-invalid={Boolean((errors as FormState)[key])}
+              aria-describedby={(errors as FormState)[key] ? `${key}-err` : undefined}
+            />
+            {(errors as FormState)[key] ? (
+              <p id={`${key}-err`} className="text-xs text-rose-300">
+                {(errors as FormState)[key]}
+              </p>
+            ) : null}
+          </div>
+        ))}
+
+        <div className="flex flex-col gap-1.5 md:col-span-2">
+          <label htmlFor="message" className="text-xs uppercase tracking-[0.11em] text-slate-400">
+            Message
+          </label>
+          <textarea
+            id="message"
+            rows={6}
+            value={data.message}
+            onChange={(event) =>
+              setData((prev) => ({ ...prev, message: event.target.value }))
+            }
+            className="rounded-lg border border-slate-600 bg-transparent px-3 py-2.5 text-sm text-slate-100 outline-none transition-colors placeholder:text-slate-500 focus:border-slate-500"
+            aria-invalid={Boolean(errors.message)}
+            aria-describedby={errors.message ? "message-err" : undefined}
+            placeholder="Tell me about your project, timeline, and scope."
+          />
+          {errors.message ? (
+            <p id="message-err" className="text-xs text-rose-300">
+              {errors.message}
+            </p>
+          ) : null}
+        </div>
+      </div>
+
+      <div className="flex flex-wrap justify-end gap-2.5">
+        <button
+          type="button"
+          onClick={() => setData({ name: "", email: "", subject: "", message: "" })}
+          className="rounded-lg border border-slate-600 bg-slate-950/35 px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-slate-500 hover:text-slate-100"
+        >
+          Clear
+        </button>
+        <button
+          type="submit"
+          className="rounded-lg border border-slate-600 bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-900 transition-colors hover:border-slate-500 hover:bg-white"
+        >
+          Send Message
+        </button>
+      </div>
+    </motion.form>
   );
 }

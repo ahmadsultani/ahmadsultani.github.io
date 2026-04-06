@@ -6,72 +6,41 @@ type HeadlineProps = {
   intervalMs?: number;
 };
 
-const easing = [0.22, 1, 0.36, 1];
+const easing = [0.22, 1, 0.36, 1] as const;
 
 export default function Headline({
-  phrases = ["Software Engineer", "Front-End Focused", "Performance Oriented"],
-  intervalMs = 2600,
+  phrases = [
+    "Frontend Engineering and Architecture",
+    "Design Systems and Product UI Delivery",
+    "Performance, Accessibility, and Maintainability",
+  ],
+  intervalMs = 2800,
 }: HeadlineProps) {
   const list = useMemo(() => phrases, [phrases]);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(
-      () => setIndex((i) => (i + 1) % list.length),
+    const id = window.setInterval(
+      () => setIndex((prev) => (prev + 1) % list.length),
       intervalMs
     );
-    return () => clearInterval(id);
-  }, [list, intervalMs]);
-
-  const current = list[index];
-
-  // Split into words for a subtle stagger
-  const words = current.split(" ");
+    return () => window.clearInterval(id);
+  }, [intervalMs, list.length]);
 
   return (
-    <div className="mt-2">
-      <div className="relative h-[3.2rem] md:h-[4.5rem] overflow-hidden">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={current}
-            initial={{ y: "100%", opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
-            exit={{ y: "-60%", opacity: 0 }}
-            transition={{ duration: 0.7, ease: easing }}
-            className="absolute inset-0 flex items-center justify-center"
-          >
-            <motion.h1
-              className="text-[34px] leading-tight md:text-6xl font-semibold tracking-tight text-center"
-              initial="hidden"
-              animate="show"
-              variants={{
-                hidden: {},
-                show: {
-                  transition: { staggerChildren: 0.05, delayChildren: 0.05 },
-                },
-              }}
-            >
-              {words.map((w, i) => (
-                <motion.span
-                  key={`${w}-${i}`}
-                  className="inline-block mr-2"
-                  variants={{
-                    hidden: { opacity: 0, y: 14, filter: "blur(6px)" },
-                    show: {
-                      opacity: 1,
-                      y: 0,
-                      filter: "blur(0px)",
-                      transition: { duration: 0.6, ease: easing },
-                    },
-                  }}
-                >
-                  {w}
-                </motion.span>
-              ))}
-            </motion.h1>
-          </motion.div>
-        </AnimatePresence>
-      </div>
+    <div className="h-8 overflow-hidden md:h-10">
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={list[index]}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.4, ease: easing }}
+          className="text-base font-medium tracking-[0.01em] text-slate-300 md:text-xl"
+        >
+          {list[index]}
+        </motion.p>
+      </AnimatePresence>
     </div>
   );
 }

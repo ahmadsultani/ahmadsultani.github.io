@@ -1,7 +1,6 @@
 import {
   LazyMotion,
   domAnimation,
-  MotionConfig,
   AnimatePresence,
 } from "framer-motion";
 
@@ -60,7 +59,7 @@ function App() {
                 animate="animate"
                 exit="exit"
               >
-                <main className="-mt-14 text-gray-400  flex flex-col gap-10 md:gap-20 lg:gap-40 pb-20 w-screen overflow-hidden">
+                <main className="-mt-16 flex min-h-screen flex-col gap-16 pb-24 pt-2 md:gap-24 lg:gap-28">
                   <Hero />
                   <About />
                   <Experience />
@@ -92,7 +91,7 @@ function App() {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="text-gray-400  -mt-14 min-h-screen"
+                className="-mt-16 min-h-screen text-slate-200"
               >
                 <ProjectDetail />
               </motion.div>

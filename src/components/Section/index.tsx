@@ -10,14 +10,14 @@ export default function Section(props: SectionProps) {
   const { id, children, delay } = props;
   return (
     <motion.section
-      initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
       id={id}
-      className="w-screen flex flex-col gap-6 mx-auto px-7 lg:px-20 bg-primary-bg"
+      className="w-full px-5 sm:px-8 lg:px-12"
     >
-      {children}
+      <div className="mx-auto w-full max-w-6xl">{children}</div>
     </motion.section>
   );
 }

@@ -1,125 +1,73 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import {
+  AnimatePresence,
   motion,
+  useMotionTemplate,
   useScroll,
   useTransform,
-  useMotionTemplate,
-  AnimatePresence,
 } from "framer-motion";
 
 type Props = {
-  threshold?: number; // when to show (px)
-  size?: number; // button diameter
+  threshold?: number;
+  size?: number;
   className?: string;
   label?: string;
 };
 
 export default function ButtonHome({
   threshold = 240,
-  size = 48,
+  size = 44,
   className = "",
   label = "Back to top",
 }: Props) {
   const { scrollYProgress } = useScroll();
   const [show, setShow] = useState(false);
-  const [active, setActive] = useState(false); // hide on idle
-  const idleTimer = useRef<number | null>(null);
 
-  // show/hide threshold
   useEffect(() => {
-    const onScroll = () => {
-      setShow(window.scrollY > threshold);
-      setActive(true);
-      if (idleTimer.current) window.clearTimeout(idleTimer.current);
-      idleTimer.current = window.setTimeout(() => setActive(false), 1600);
-    };
+    const onScroll = () => setShow(window.scrollY > threshold);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [threshold]);
 
-  // progress ring (stroke offset)
-  const circumference = 2 * Math.PI * 18; // r=18
-  const offset = useTransform(scrollYProgress, (p) => (1 - p) * circumference);
-
-  const ringBg = useMotionTemplate`conic-gradient(from 120deg, rgba(34,211,238,0.45), rgba(99,102,241,0.45), rgba(56,189,248,0.45))`;
-
-  const clickTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const progress = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const border = useMotionTemplate`conic-gradient(rgba(226,232,240,0.9) ${progress}%, rgba(71,85,105,0.35) ${progress}%)`;
 
   return (
     <AnimatePresence>
       {show && (
         <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: active ? 1 : 0.65, y: 0 }}
-          exit={{ opacity: 0, y: 8 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 10 }}
           transition={{ duration: 0.25 }}
-          className="fixed z-50 right-5 bottom-6"
+          className="fixed bottom-6 right-5 z-40"
         >
           <motion.button
             type="button"
             aria-label={label}
-            onClick={clickTop}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             whileTap={{ scale: 0.96 }}
-            className={`relative grid place-items-center rounded-full border border-white/10 bg-white/[0.06] backdrop-blur ${className}`}
+            className={`relative grid place-items-center rounded-full border border-slate-600 bg-slate-900/85 text-slate-100 backdrop-blur ${className}`}
             style={{ width: size, height: size }}
           >
-            {/* gradient halo */}
             <span
               aria-hidden
-              className="pointer-events-none absolute -inset-[3px] rounded-full opacity-60 blur-sm"
-              style={{ background: ringBg as any }}
+              className="pointer-events-none absolute -inset-[2px] rounded-full"
+              style={{ background: border as unknown as string, zIndex: -1 }}
             />
-            {/* ring track */}
             <svg
-              aria-hidden
-              width={size}
-              height={size}
-              viewBox="0 0 48 48"
-              className="absolute inset-0"
-            >
-              <circle
-                cx="24"
-                cy="24"
-                r="18"
-                stroke="rgba(255,255,255,0.12)"
-                strokeWidth="3"
-                fill="none"
-              />
-              <motion.circle
-                cx="24"
-                cy="24"
-                r="18"
-                stroke="url(#grad)"
-                strokeWidth="3"
-                strokeLinecap="round"
-                fill="none"
-                strokeDasharray={circumference}
-                style={{ strokeDashoffset: offset }}
-              />
-              <defs>
-                <linearGradient id="grad" x1="0" y1="0" x2="48" y2="0">
-                  <stop offset="0%" stopColor="rgba(34,211,238,0.95)" />
-                  <stop offset="50%" stopColor="rgba(99,102,241,0.95)" />
-                  <stop offset="100%" stopColor="rgba(56,189,248,0.95)" />
-                </linearGradient>
-              </defs>
-            </svg>
-
-            {/* arrow icon */}
-            <svg
-              width="18"
-              height="18"
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
-              className="relative"
               fill="none"
-              stroke="white"
+              stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="M12 19V5" />
-              <path d="M5 12l7-7 7 7" />
+              <path d="M12 18V6" />
+              <path d="M6.5 11.5 12 6l5.5 5.5" />
             </svg>
           </motion.button>
         </motion.div>
